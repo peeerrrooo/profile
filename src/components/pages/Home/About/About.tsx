@@ -1,5 +1,5 @@
 import React from 'react'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { IMenuModel } from 'models/menuModel/types'
 import { inject, observer } from 'mobx-react'
 import { Container } from '../common/Container'
@@ -16,7 +16,7 @@ const About = inject('MenuModel')(
       <Container
         titleId="about"
         blockId={MenuModel!.ABOUT_BLOCK}
-        title={content().menu.aboutHeader}
+        title={info().menu.aboutHeader}
       >
         <Main />
 

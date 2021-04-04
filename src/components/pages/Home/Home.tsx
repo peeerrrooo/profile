@@ -6,11 +6,11 @@ import { About } from './About'
 import { Resume } from './Resume'
 import { Portfolio } from './Portfolio'
 import { Contact } from './Contact'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 
 const Home = () => {
   return (
-    <Page title="Porfolio" metaDescription={content().information.aboutContent}>
+    <Page title="Porfolio" metaDescription={info().information.aboutContent}>
       <Layout>
         <Main />
         <About />

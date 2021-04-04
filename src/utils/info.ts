@@ -6,7 +6,7 @@ import finservice from 'resources/img/finservice.svg'
 import pure from 'resources/img/pure.svg'
 import zaaptv from 'resources/img/zaaptv.png'
 
-export const content = () => ({
+export const info = () => ({
   menu: {
     home: 'Home',
     about: 'About',

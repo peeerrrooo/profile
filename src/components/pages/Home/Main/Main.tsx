@@ -1,6 +1,6 @@
 import React from 'react'
 import { Title, Text, Paragraph } from 'ui/Typography'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { Block } from 'ui/Block'
 import UiParticles, { IParticlesParams } from 'react-particles-js'
 import { Icon } from 'ui/Icon'
@@ -65,31 +65,31 @@ const Main = inject('MenuModel')(
               marginBottom={16}
               fontWeight="lightBold"
             >
-              <Text color="white">{content().information.hello}</Text>{' '}
-              <Text color="primary">{content().information.fullName}</Text>
+              <Text color="white">{info().information.hello}</Text>{' '}
+              <Text color="primary">{info().information.fullName}</Text>
             </Title>
             <Paragraph
               fontSize={1.25 * 16}
               marginBottom={1.5 * 16}
               textAlign="center"
             >
-              {content().information.aboutContent}
+              {info().information.aboutContent}
             </Paragraph>
             <Block centered>
-              <a href={content().information.github} target="_blank">
+              <a href={info().information.github} target="_blank">
                 <Icon rounded icon="FaGithub" />
               </a>
-              <a href={content().information.instagram} target="_blank">
+              <a href={info().information.instagram} target="_blank">
                 <Icon rounded icon="FaInstagram" marginLeft={16} />
               </a>
               <a
-                href={`https://telegram.me/${content().information.telegram}`}
+                href={`https://telegram.me/${info().information.telegram}`}
                 target="_blank"
               >
                 <Icon rounded icon="SiTelegram" marginLeft={16} />
               </a>
               <a
-                href={`skype:${content().information.skype}?userinfo`}
+                href={`skype:${info().information.skype}?userinfo`}
                 target="_blank"
               >
                 <Icon rounded icon="FaSkype" marginLeft={16} />

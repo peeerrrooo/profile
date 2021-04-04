@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { hexToRgba } from 'styles/helpers'
 import { Image } from 'ui/Image'
 import { Button } from 'ui/Button'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { scrollTo } from 'utils/scroll'
 import { Title, Text, Paragraph } from 'ui/Typography'
 import { phoneNumberNormalizer } from 'utils/formatters/phone'
@@ -21,7 +21,7 @@ const Main = () => {
           selection={false}
         >
           <ImageContainer$>
-            <Image src={content().information.aboutImage} maxWidth="100%" />
+            <Image src={info().information.aboutImage} maxWidth="100%" />
           </ImageContainer$>
         </Block>
 
@@ -36,84 +36,84 @@ const Main = () => {
             marginBottom="s1"
             color="white"
           >
-            I am <Text color="primary">{content().information.fullName}</Text>
+            I am <Text color="primary">{info().information.fullName}</Text>
           </Title>
 
           <Paragraph marginBottom="s2">
-            {content().information.aboutContent}
+            {info().information.aboutContent}
           </Paragraph>
 
           <List$>
-            {!content().information.fullName ? null : (
+            {!info().information.fullName ? null : (
               <li>
                 <Paragraph selection={false}>
                   <b>Full Name</b>
                 </Paragraph>{' '}
-                {content().information.fullName}
+                {info().information.fullName}
               </li>
             )}
-            {!content().information.age ? null : (
+            {!info().information.age ? null : (
               <li>
                 <Paragraph selection={false}>
                   <b>Age</b>
                 </Paragraph>{' '}
-                {content().information.age} Years
+                {info().information.age} Years
               </li>
             )}
-            {!content().information.phone ? null : (
+            {!info().information.phone ? null : (
               <li>
                 <Paragraph selection={false}>
                   <b>Phone</b>
                 </Paragraph>{' '}
                 <span>
-                  <a href={`tel:+7${content().information.phone}`}>
-                    +7 {phoneNumberNormalizer(content().information.phone)}
+                  <a href={`tel:+7${info().information.phone}`}>
+                    +7 {phoneNumberNormalizer(info().information.phone)}
                   </a>
                 </span>
               </li>
             )}
-            {!content().information.nationality ? null : (
+            {!info().information.nationality ? null : (
               <li>
                 <Paragraph selection={false}>
                   <b>Nationality</b>
                 </Paragraph>{' '}
-                {content().information.nationality}
+                {info().information.nationality}
               </li>
             )}
-            {!content().information.language ? null : (
+            {!info().information.language ? null : (
               <li>
                 <Paragraph selection={false}>
                   <b>Languages</b>
                 </Paragraph>{' '}
-                {content().information.language}
+                {info().information.language}
               </li>
             )}
-            {!content().information.email ? null : (
+            {!info().information.email ? null : (
               <li>
                 <Paragraph selection={false}>
                   <b>Email</b>
                 </Paragraph>{' '}
                 <span>
-                  <a href={`mailto:${content().information.email}`}>
-                    {content().information.email}
+                  <a href={`mailto:${info().information.email}`}>
+                    {info().information.email}
                   </a>
                 </span>
               </li>
             )}
-            {!content().information.address ? null : (
+            {!info().information.address ? null : (
               <li>
                 <Paragraph selection={false}>
                   <b>Address</b>
                 </Paragraph>{' '}
-                {content().information.address}
+                {info().information.address}
               </li>
             )}
-            {!content().information.freelanceStatus ? null : (
+            {!info().information.freelanceStatus ? null : (
               <li>
                 <Paragraph selection={false}>
                   <b>Freelance</b>
                 </Paragraph>{' '}
-                {content().information.freelanceStatus}
+                {info().information.freelanceStatus}
               </li>
             )}
           </List$>

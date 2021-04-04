@@ -1,7 +1,7 @@
 import React from 'react'
 import { Block } from 'ui/Block'
 import { phoneNumberNormalizer } from 'utils/formatters/phone'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { InfoBlock } from './InfoBlock'
 
 const Contacts = () => {
@@ -14,29 +14,29 @@ const Contacts = () => {
       <InfoBlock
         title="Phone"
         icon="BiPhone"
-        content={`+7 ${phoneNumberNormalizer(content().information.phone)}`}
-        href={`tel:+7${content().information.phone}`}
+        content={`+7 ${phoneNumberNormalizer(info().information.phone)}`}
+        href={`tel:+7${info().information.phone}`}
       />
 
       <InfoBlock
         title="Email"
         icon="FiMail"
-        content={content().information.email}
-        href={`mailto:${content().information.email}`}
+        content={info().information.email}
+        href={`mailto:${info().information.email}`}
       />
 
       <InfoBlock
         title="Telegram"
         icon="FaTelegramPlane"
-        content={`@${content().information.telegram}`}
-        href={`https://telegram.me/${content().information.telegram}`}
+        content={`@${info().information.telegram}`}
+        href={`https://telegram.me/${info().information.telegram}`}
       />
 
       <InfoBlock
         title="Skype"
         icon="FaSkype"
-        content={`@${content().information.skype}`}
-        href={`skype:${content().information.skype}?userinfo`}
+        content={`@${info().information.skype}`}
+        href={`skype:${info().information.skype}?userinfo`}
       />
     </Block>
   )

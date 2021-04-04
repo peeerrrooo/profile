@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react'
 import { Container } from '../common/Container'
 import { Form } from './Form'
 import { Contacts } from './Contacts'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { Block } from 'ui/Block'
 
 export interface Props {
@@ -15,7 +15,7 @@ const Contact = inject('MenuModel')(
   observer(({ MenuModel }: Props) => {
     return (
       <Container
-        title={content().menu.contactHeader}
+        title={info().menu.contactHeader}
         titleId="contact"
         blockId={MenuModel!.CONTACT_BLOCK}
       >

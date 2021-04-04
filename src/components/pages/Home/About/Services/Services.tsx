@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, { ReactNode } from 'react'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { Block } from 'ui/Block'
 import { Title } from 'ui/Typography'
 import { Item, Placeholder$ } from './Item'
@@ -65,21 +65,21 @@ const Services = () => {
         textTransform="uppercase"
         selection={false}
       >
-        {content().menu.services}
+        {info().menu.services}
       </Title>
 
       <Block mediaCommon={{ touch: { hidden: true } }}>
-        {generate({ size: 3, services: content().services })}
+        {generate({ size: 3, services: info().services })}
       </Block>
       <Block
         mediaCommon={{ mobile: { hidden: true }, desktop: { hidden: true } }}
       >
-        {generate({ size: 2, services: content().services })}
+        {generate({ size: 2, services: info().services })}
       </Block>
       <Block
         mediaCommon={{ tablet: { hidden: true }, desktop: { hidden: true } }}
       >
-        {generate({ size: 1, services: content().services })}
+        {generate({ size: 1, services: info().services })}
       </Block>
     </Block>
   )

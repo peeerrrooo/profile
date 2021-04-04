@@ -10,7 +10,7 @@ import { MenuContainer } from './MenuContainer'
 import { IMenuModel } from 'models/menuModel/types'
 import { IModels } from 'models/models/types'
 import { inject, observer } from 'mobx-react'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { Item } from './Item'
 import { Toggle } from './Toggle'
 import { Block } from 'ui/Block'
@@ -48,34 +48,34 @@ const Menu = inject((store: IModels) => ({
               <Item
                 id="home"
                 blockId={MenuModel!.HOME_BLOCK}
-                title={content().menu.home}
+                title={info().menu.home}
               />
               <Item
                 id="about"
                 blockId={MenuModel!.ABOUT_BLOCK}
-                title={content().menu.about}
+                title={info().menu.about}
               />
               <Item
                 id="resume"
                 blockId={MenuModel!.RESUME_BLOCK}
-                title={content().menu.resume}
+                title={info().menu.resume}
               />
               <Item
                 id="portfolio"
                 blockId={MenuModel!.PORTFOLIO_BLOCK}
-                title={content().menu.portfolio}
+                title={info().menu.portfolio}
               />
               <Item
                 id="contact"
                 blockId={MenuModel!.CONTACT_BLOCK}
-                title={content().menu.contact}
+                title={info().menu.contact}
               />
             </MenuContainer>
             <Copyright$>
               &copy; {new Date().getFullYear()}{' '}
               <b>
-                <Text color="primary">{content().information.firstName}</Text>
-                {content().information.lastName}
+                <Text color="primary">{info().information.firstName}</Text>
+                {info().information.lastName}
               </b>
             </Copyright$>
           </Inner>

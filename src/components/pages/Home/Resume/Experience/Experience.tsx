@@ -1,6 +1,6 @@
 import React from 'react'
 import { Block } from 'ui/Block'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { Title } from 'ui/Typography'
 import { Items } from './Items'
 
@@ -19,19 +19,19 @@ const Experience = () => {
         textTransform="uppercase"
         selection={false}
       >
-        {content().menu.resume}
+        {info().menu.resume}
       </Title>
 
       <Items
         icon="BsBriefcase"
         title="Working Experience"
-        list={content().experience.workingExperience}
+        list={info().experience.workingExperience}
       />
 
       <Items
         icon="BiBook"
         title="Educational Qualifications"
-        list={content().experience.educationExperience}
+        list={info().experience.educationExperience}
       />
     </Block>
   )

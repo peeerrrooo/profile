@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, { ReactNode, useState } from 'react'
-import { content } from 'utils/content'
+import { info } from 'utils/info'
 import { IMenuModel } from 'models/menuModel/types'
 import { inject, observer } from 'mobx-react'
 import { Container } from '../common/Container'
@@ -21,7 +21,7 @@ const Portfolio = inject('MenuModel')(
 
     const handleOpen = (index: number) => {
       if (current) return
-      setCurrent(content().portfolios[index])
+      setCurrent(info().portfolios[index])
       setOpen(true)
       scrollTo('details:block', { duration: 175 })
     }
@@ -36,21 +36,21 @@ const Portfolio = inject('MenuModel')(
       let index = -1
       _.each(
         _.times(
-          content().portfolios.length % 2 === 0
-            ? parseInt(`${content().portfolios.length / 2}`, 10)
-            : parseInt(`${content().portfolios.length / 2}`, 10) + 1
+          info().portfolios.length % 2 === 0
+            ? parseInt(`${info().portfolios.length / 2}`, 10)
+            : parseInt(`${info().portfolios.length / 2}`, 10) + 1
         ),
         (count) => {
           const prepare: ReactNode[] = []
           // @ts-ignore
           _.each(_.times(2), () => {
             index += 1
-            if (!content().portfolios[index]) {
+            if (!info().portfolios[index]) {
               prepare.push(<Placeholder$ key={index} />)
               return false
             }
 
-            const currentItem = content().portfolios[index]
+            const currentItem = info().portfolios[index]
             prepare.push(
               <Item
                 key={index}
@@ -82,7 +82,7 @@ const Portfolio = inject('MenuModel')(
       <Container
         titleId="portfolio"
         blockId={MenuModel!.PORTFOLIO_BLOCK}
-        title={content().menu.portfolioHeader}
+        title={info().menu.portfolioHeader}
       >
         <Block position="relative">
           <Element
