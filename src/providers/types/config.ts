@@ -1,6 +1,7 @@
 export interface IConfig {
   prefix: string
   apiUri: string
+  prod: boolean
 
   siteName: string
   siteUrl: string

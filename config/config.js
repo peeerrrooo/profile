@@ -23,7 +23,8 @@ try {
 
 const config = {
   prefix: cfg.get('FRONTEND_PREFIX') || cfg.get('prefix') || '',
-  apiUri: cfg.get('API_URI') || cfg.get('apiUri')
+  apiUri: cfg.get('API_URI') || cfg.get('apiUri'),
+  prod: cfg.get('NODE_ENV') === 'production'
 }
 
 module.exports = config

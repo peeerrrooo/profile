@@ -9,6 +9,7 @@ import {
 export const parseConfig = (config): IConfig => ({
   prefix: config?.prefix ?? '',
   apiUri: config?.apiUri ?? '',
+  prod: !!config?.prod,
 
   siteName: config?.siteName ?? DEFAULT_SITE_NAME,
   siteUrl: config?.siteUrl ?? DEFAULT_SITE_URL,
