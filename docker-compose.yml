@@ -9,7 +9,7 @@ services:
     ports:
       - 3333:3333
     environment:
-      - PORT=3333
+      - PORT=${PORT}
       - FRONTEND_PREFIX=${FRONTEND_PREFIX}
       - API_URI=${API_URI}
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
