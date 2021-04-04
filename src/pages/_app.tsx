@@ -8,7 +8,6 @@ import { Models } from 'models/models'
 import { ThemeProvider } from 'components/ThemeProvider'
 import { isServer } from 'utils/isomorphic'
 import { modelsInit } from 'models/models/init'
-import 'react-image-lightbox/style.css'
 
 interface AppProps extends NextAppProps {
   modelsSsr: Models
