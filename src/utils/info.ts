@@ -225,7 +225,7 @@ export const info = () => ({
       },
       {
         title: 'Makefile',
-        href: 'https://www.gnu.org/software/make/manual/make.htm'
+        href: 'https://www.gnu.org/software/make/manual/make.html'
       },
       {
         title: 'Yocto Linux',
@@ -428,7 +428,7 @@ export const info = () => ({
         },
         {
           title: 'Makefile',
-          href: 'https://www.gnu.org/software/make/manual/make.htm'
+          href: 'https://www.gnu.org/software/make/manual/make.html'
         },
         {
           title: 'MQTT',
