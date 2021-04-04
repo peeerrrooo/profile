@@ -107,6 +107,7 @@ const Root$ = styled(Block)<{ open: boolean }>`
 
   ${(props) => props.theme.ViewPorts.tablet} {
     width: 250px;
+    z-index: 11;
     transform: ${(props) =>
       !props.open ? 'translateX(-100%)' : 'translateX(0%)'};
   }

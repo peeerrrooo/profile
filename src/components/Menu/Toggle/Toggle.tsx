@@ -10,6 +10,7 @@ const Toggle = styled(Block)`
   padding: 0;
   height: ${(props) => props.theme.Controls.inputButtonHeight};
   width: 50px;
+  height: 50px;
   text-align: center;
   font-size: 1.6rem;
   background: ${(props) => lighten(props.theme.Colors.bgBody, 0)};
@@ -19,6 +20,7 @@ const Toggle = styled(Block)`
   color: ${(props) => props.theme.Colors.body};
   border: 1px solid ${(props) => props.theme.Colors.border};
   transition: ${(props) => props.theme.Controls.transition};
+  z-index: 11;
 
   &:focus,
   &:hover {
