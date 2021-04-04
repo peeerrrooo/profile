@@ -1,0 +1,10 @@
+.idea
+.vscode
+node_modules
+.next
+build
+*.sublime-*
+npm-debug.log
+yarn-error.log
+.DS_Store
+.env

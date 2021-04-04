@@ -1,0 +1,4 @@
+apiUri: "/api"
+prefix: ""
+telegramToken: ""
+telegramChatId: ""

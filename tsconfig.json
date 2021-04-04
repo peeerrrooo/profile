@@ -1,0 +1,97 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2020",
+    "module": "esnext",
+    "declaration": false,
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "outDir": "artifacts",
+    "rootDirs": [
+      ".",
+      "../shared"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "noEmit": true,
+    "importHelpers": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "types": [
+      "react",
+      "jest"
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2015",
+      "esnext",
+      "es2017",
+      "ESNext.Intl",
+      "ES2018.Intl"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "paths": {
+      "locales/*": [
+        "./src/locales/*"
+      ],
+      "ui/*": [
+        "./src/ui/*"
+      ],
+      "components/*": [
+        "./src/components/*"
+      ],
+      "models/*": [
+        "./src/models/*"
+      ],
+      "providers/*": [
+        "./src/providers/*"
+      ],
+      "resources/*": [
+        "./src/resources/*"
+      ],
+      "styles/*": [
+        "./src/styles/*"
+      ],
+      "hooks/*": [
+        "./src/hooks/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ],
+      "init/*": [
+        "./src/init/*"
+      ],
+      "tslib": [
+        "node_modules/tslib/tslib.d.ts"
+      ]
+    }
+  },
+  "types": [
+    "react",
+    "jest"
+  ],
+  "exclude": [
+    ".next",
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "./.storybook/*.ts",
+    "./src/*.ts",
+    "./src/*.tsx",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
