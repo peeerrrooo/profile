@@ -54,7 +54,6 @@ const Content$ = styled(Block)<{ open: boolean }>`
       props.open ? 'translateX(250px)' : 'translateX(0px)'};
   }
 `
-
 //#endregion
 
 export { Layout }

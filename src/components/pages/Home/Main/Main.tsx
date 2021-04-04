@@ -2,13 +2,49 @@ import React from 'react'
 import { Title, Text, Paragraph } from 'ui/Typography'
 import { content } from 'utils/content'
 import { Block } from 'ui/Block'
+import UiParticles, { IParticlesParams } from 'react-particles-js'
 import { Icon } from 'ui/Icon'
 import { IMenuModel } from 'models/menuModel/types'
 import { inject, observer } from 'mobx-react'
 import { Container } from '../common/Container'
+import styled from 'styled-components'
 
 export interface IMainProps {
   MenuModel?: IMenuModel
+}
+
+const particleConfig: IParticlesParams = {
+  particles: {
+    number: {
+      value: 160,
+      density: {
+        enable: false
+      }
+    },
+    color: {
+      value: '#ffffff'
+    },
+    opacity: {
+      value: 0.1
+    },
+    size: {
+      value: 5,
+      random: true,
+      anim: {
+        speed: 4,
+        size_min: 0.3
+      }
+    },
+    line_linked: {
+      enable: false
+    },
+    move: {
+      random: true,
+      speed: 1,
+      direction: 'top',
+      out_mode: 'out'
+    }
+  }
 }
 
 const Main = inject('MenuModel')(
@@ -20,8 +56,9 @@ const Main = inject('MenuModel')(
           padding="50px 80px"
           minHeight="100vh"
           mediaCommon={{ mobile: { padding: '50px 20px' } }}
+          position="relative"
         >
-          <Block>
+          <Block zIndex={1}>
             <Title
               textAlign="center"
               level={1}
@@ -60,9 +97,22 @@ const Main = inject('MenuModel')(
             </Block>
           </Block>
         </Block>
+
+        <Particles$ params={particleConfig} />
       </Container>
     )
   })
 )
+
+//#region Styled components
+const Particles$ = styled(UiParticles)`
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+`
+//#endregion
 
 export { Main }

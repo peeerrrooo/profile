@@ -8,8 +8,8 @@ class MenuModel extends BaseModel implements IMenuModel {
   constructor(params) {
     super(params)
     makeObservable(this)
-    this.scrollSetActive = _.debounce(this.scrollSetActive, 30)
-    this.stopScrolling = _.debounce(this.stopScrolling, 30)
+    this.scrollSetActive = _.debounce(this.scrollSetActive, 50)
+    this.stopScrolling = _.debounce(this.stopScrolling, 50)
   }
 
   HOME_BLOCK = 'home'
