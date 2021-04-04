@@ -1,26 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Block } from 'ui/Block'
 import styled from 'styled-components'
 import { hexToRgba } from 'styles/helpers'
 import { Image } from 'ui/Image'
-import { Icon } from 'ui/Icon'
 import { Button } from 'ui/Button'
 import { content } from 'utils/content'
 import { scrollTo } from 'utils/scroll'
 import { Title, Text, Paragraph } from 'ui/Typography'
 import { phoneNumberNormalizer } from 'utils/formatters/phone'
-import Lightbox from 'react-image-lightbox'
 
 const Main = () => {
-  const [open, setOpen] = useState(false)
-
   return (
     <>
       <Block horizontal="left" media={{ touch: { horizontal: 'none' } }}>
-        <ImageView$
+        <Block
           width="50%"
           marginRight="s4"
-          onClick={() => setOpen(true)}
           mediaCommon={{ touch: { width: '100%' } }}
           position="relative"
           selection={false}
@@ -28,11 +23,7 @@ const Main = () => {
           <ImageContainer$>
             <Image src={content().information.aboutImage} maxWidth="100%" />
           </ImageContainer$>
-
-          <IconContainer$>
-            <Icon icon="BiZoomIn" size={100} />
-          </IconContainer$>
-        </ImageView$>
+        </Block>
 
         <Block
           width="50%"
@@ -129,52 +120,11 @@ const Main = () => {
           <Button onClick={() => scrollTo('contact')}>Contact with me</Button>
         </Block>
       </Block>
-
-      {open && (
-        <Lightbox
-          mainSrc={content().information.aboutImageLg}
-          onCloseRequest={() => setOpen(false)}
-          imagePadding={36}
-          imageTitle={null}
-          enableZoom={false}
-        />
-      )}
     </>
   )
 }
 
 //#region Styled components
-const IconContainer$ = styled(Block)`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100px;
-  width: 100px;
-  margin-left: -50px;
-  margin-top: -50px;
-  color: ${(props) => props.theme.Colors.white};
-  display: inline-block;
-  visibility: hidden;
-  opacity: 0;
-  transform: scale(0);
-  transition: all 0.175s ease-out 0s;
-  pointer-events: none;
-`
-
-const ImageView$ = styled(Block)`
-  &:hover ${IconContainer$} {
-    visibility: visible;
-    opacity: 0.5;
-    transform: scale(1);
-  }
-
-  ${(props) => props.theme.ViewPorts.touch} {
-    &:hover ${IconContainer$} {
-      visibility: hidden;
-    }
-  }
-`
-
 const ImageContainer$ = styled(Block)`
   position: relative;
 
