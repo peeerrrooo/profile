@@ -205,7 +205,7 @@ export const info = () => ({
       },
       {
         title: 'Nats',
-        href: 'https://www.mongodb.com'
+        href: 'https://nats.io'
       },
       {
         title: 'MQTT',
@@ -433,6 +433,10 @@ export const info = () => ({
         {
           title: 'MQTT',
           href: 'https://mqtt.org'
+        },
+        {
+          title: 'Nats',
+          href: 'https://nats.io'
         }
       ],
       content: [
@@ -482,6 +486,10 @@ export const info = () => ({
         {
           title: 'Rsuite Design',
           href: 'https://rsuitejs.com'
+        },
+        {
+          title: 'Nats',
+          href: 'https://nats.io'
         }
       ],
       content: [
