@@ -10,7 +10,7 @@ import { info } from 'utils/info'
 
 const Home = () => {
   return (
-    <Page title="Porfolio" metaDescription={info().information.aboutContent}>
+    <Page title="Portfolio" metaDescription={info().information.aboutContent}>
       <Layout>
         <Main />
         <About />
