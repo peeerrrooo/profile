@@ -25,7 +25,7 @@ export const info = () => ({
     firstName: 'Daniil',
     lastName: 'Brakk',
     aboutContent:
-      'I am a front-end engineer and I enjoy building client-side systems. Everything about microservices is also inspiring.',
+      'I am a front-end engineer and I enjoy building client platforms. And also everything that relates to microservices and unix way inspires.',
     github: 'https://github.com/peeerrrooo',
     instagram: 'https://www.instagram.com/daniil.brakk',
     telegram: 'daniilbrakk',
@@ -313,6 +313,10 @@ export const info = () => ({
         { title: 'React', href: 'https://reactjs.org' },
         { title: 'Node.js', href: 'https://nodejs.org' },
         {
+          title: 'Typescript',
+          href: 'https://www.typescriptlang.org'
+        },
+        {
           title: 'MobX',
           href: 'https://mobx.js.org'
         },
@@ -339,7 +343,8 @@ export const info = () => ({
         {
           title: 'MJML',
           href: 'https://mjml.io'
-        }
+        },
+        { title: 'Webpack', href: 'https://webpack.js.org' }
       ],
       content: [
         'Development of a pure.app dating web application and marketing content platform.',
@@ -347,7 +352,8 @@ export const info = () => ({
       ],
       progress: [
         'Frontend development for dating application.',
-        'Creation of a marketing platform for blogging and various advertising mailings.'
+        'Creation of a marketing platform for blogging and various advertising mailings.',
+        'Custom CKEditor & Strapi integration.'
       ]
     },
     {
@@ -447,7 +453,8 @@ export const info = () => ({
         'Setting up, configuring and compiling Yocto Linux.',
         'Development of a graphical interface based on Qt Device Creation.',
         'Development of processes / microservices boards for working with Internet of Things infrastructure.',
-        'Development of a module for working with devices based on Bluetooth Low Energy.'
+        'Development of a module for working with devices based on Bluetooth Low Energy.',
+        'Implementation of microservices for working with MQTT telemetry.'
       ]
     },
     {
@@ -482,6 +489,7 @@ export const info = () => ({
           title: 'Gorilla',
           href: 'https://www.gorillatoolkit.org'
         },
+        { title: 'Mongo', href: 'https://www.mongodb.com' },
         { title: 'Webpack', href: 'https://webpack.js.org' },
         {
           title: 'Rsuite Design',
@@ -494,11 +502,12 @@ export const info = () => ({
       ],
       content: [
         'Creation of an online platform for completing educational assignments in subjects, classes and topics for school-age children.',
-        "Tasks are created by content managers based on a template system. There are a lot of drag'n'drop'a and automatically-generated images on SVG in the tasks."
+        'Tasks are created by content managers based on a template system. There are a lot of drag-and-drop and automatically-generated images based on SVG in the tasks.'
       ],
       progress: [
         'Front-end architecture development.',
         'Development of the task template system engine.',
+        'Creating a Markdown editor and parser with custom SVG layouts and interactive elements.',
         'Development of modules for working with end users (guest / parent / child).',
         'Real-time game engine server side implementation.'
       ]
@@ -526,13 +535,13 @@ export const info = () => ({
       ],
       content: [
         'Creation of software for SmartTV set-top boxes of various digital providers.',
-        'The interface of the final SmartTV set-top box looks like a regular Youtube TV-style interface, however "under the hood" it is presented as a cross-browser HTML5 application. Each version of the set-top box has its own version of the browser.'
+        'The interface of the final SmartTV set-top box looks like a regular Youtube TV-style interface. However, "under the hood" it is presented as a cross-browser HTML5 application base on Webkit & Qt Webkit. Each version of the set-top box has its own version of the browser.'
       ],
       progress: [
         'Cross-platform Front-end, working under different versions of Webkit both on the consoles themselves and in different browsers.',
         'Creation of a monitoring system for satellite devices for SmartTV infrastructure.',
-        'Server side development with microservices.',
-        'Creating a mailing system, clearing the Akamai / Redis / Nginx cache.',
+        'Development of microservices for satellites.',
+        'Creating a clearing system the Akamai, Redis, Nginx cache.',
         'Participation in the creation of a distribution and deployment system.'
       ]
     }
