@@ -25,7 +25,7 @@ export const info = () => ({
     firstName: 'Daniil',
     lastName: 'Brakk',
     aboutContent:
-      'I am a frontend engineer. I like to create client side systems. I am also inspired by everything that relates to microservices.',
+      'I am a front-end engineer and I enjoy building client-side systems. Everything about microservices is also inspiring.',
     github: 'https://github.com/peeerrrooo',
     instagram: 'https://www.instagram.com/daniil.brakk',
     telegram: 'daniilbrakk',
