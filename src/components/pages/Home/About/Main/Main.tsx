@@ -5,11 +5,14 @@ import { hexToRgba } from 'styles/helpers'
 import { Image } from 'ui/Image'
 import { Button } from 'ui/Button'
 import { info } from 'utils/info'
-import { scrollTo } from 'utils/scroll'
 import { Title, Text, Paragraph } from 'ui/Typography'
 import { phoneNumberNormalizer } from 'utils/formatters/phone'
 
-const Main = () => {
+export interface IMainProps {
+  prefix: string
+}
+
+const Main = ({ prefix }: IMainProps) => {
   return (
     <>
       <Block horizontal="left" media={{ touch: { horizontal: 'none' } }}>
@@ -117,7 +120,7 @@ const Main = () => {
               </li>
             )}
           </List$>
-          <Button onClick={() => scrollTo('contact')}>Contact with me</Button>
+          <Button href={`${prefix}/d.brakk-cv.pdf`}>Download CV</Button>
         </Block>
       </Block>
     </>

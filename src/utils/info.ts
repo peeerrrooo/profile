@@ -132,6 +132,10 @@ export const info = () => ({
         href: 'https://mjml.io'
       },
       {
+        title: 'OpenGraph',
+        href: 'https://ogp.me'
+      },
+      {
         title: 'CKEditor',
         href: 'https://ckeditor.com'
       },
@@ -343,6 +347,14 @@ export const info = () => ({
         {
           title: 'MJML',
           href: 'https://mjml.io'
+        },
+        {
+          title: 'OpenGraph',
+          href: 'https://ogp.me'
+        },
+        {
+          title: 'CKEditor',
+          href: 'https://ckeditor.com/'
         },
         { title: 'Webpack', href: 'https://webpack.js.org' }
       ],
