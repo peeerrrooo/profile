@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   frontend:
-    build: 
+    build:
       context: .
       args:
         - FRONTEND_PREFIX=${FRONTEND_PREFIX}
@@ -18,5 +18,8 @@ services:
     image: nginx:latest
     volumes:
     - ./nginx.example.conf:/etc/nginx/nginx.conf
+    - ./etc/certs/profile:/etc/certs/profile
     ports:
     - 80:80
+    depends_on:
+      - frontend

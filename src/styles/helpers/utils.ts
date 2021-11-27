@@ -97,11 +97,11 @@ export function hexToRgba(h, opacity = 1) {
 }
 
 export const darken = (color, amount: number) => {
-  const r = Color(color)
+  const r = new Color(color)
   return r.darken(amount)
 }
 
 export const lighten = (color, amount: number) => {
-  const r = Color(color)
+  const r = new Color(color)
   return r.lighten(amount)
 }

@@ -1,10 +1,11 @@
 import { getAge } from './moment'
-import aboutImage from 'resources/img/about-img.jpeg'
+import aboutImage from 'resources/img/about.jpeg'
 import ujet from 'resources/img/ujet.svg'
 import ismart from 'resources/img/ismart.svg'
 import finservice from 'resources/img/finservice.svg'
 import pure from 'resources/img/pure.svg'
 import zaaptv from 'resources/img/zaaptv.png'
+import oneInch from 'resources/img/1inch.svg'
 
 // eslint-disable-next-line max-lines-per-function
 export const info = () => ({
@@ -26,7 +27,7 @@ export const info = () => ({
     firstName: 'Daniil',
     lastName: 'Brakk',
     aboutContent:
-      'I am a Frontend Engineer and I enjoy building client platforms. And also everything that relates to Microservices and Unix Way inspires.',
+      'I am a Software Engineer and I enjoy building rich platforms. And also everything that relates to Microservices and Unix Way inspires.',
     github: 'https://github.com/peeerrrooo',
     instagram: 'https://www.instagram.com/daniil.brakk',
     telegram: 'daniilbrakk',
@@ -36,7 +37,6 @@ export const info = () => ({
     nationality: 'Russian',
     language: 'Russian, English',
     email: 'peeerrrooo@gmail.com',
-    freelanceStatus: 'Available',
     address: 'Russia, Moscow',
     aboutImage
   },
@@ -45,24 +45,24 @@ export const info = () => ({
       title: 'Design Systems',
       icon: 'IoMdColorPalette',
       details: `
-      - Architecture design component library and style themes.
-      - Creation of development tools and integration of ui kit into the existing system.
+- Architecture design component library and style themes.
+- Creation of development tools and integration of ui kit into the existing system.
       `
     },
     {
       title: 'Frontend Development',
       icon: 'FiCode',
       details: `
-      - Implementation of responsive code for mobile devices, tablets and laptops.
-      - Creation of single page applications and isomorphic platforms.
+- Implementation of responsive code for mobile devices, tablets and laptops.
+- Creation of single page applications and isomorphic platforms.
       `
     },
     {
       title: 'Backend Development',
       icon: 'FiServer',
       details: `
-      - Designing a microservices architecture focused on the real-time client side.
-      - Implementation of code based on websockets.
+- Designing a microservices architecture focused on the real-time client side.
+- Implementation of code based on websockets.
       `
     }
   ],
@@ -84,6 +84,7 @@ export const info = () => ({
         title: 'Next.js',
         href: 'https://nextjs.org'
       },
+      { title: 'Nest.js', href: 'https://nestjs.com/' },
       {
         title: 'MobX',
         href: 'https://mobx.js.org'
@@ -115,7 +116,8 @@ export const info = () => ({
       {
         title: 'Electron',
         href: 'https://www.electronjs.org'
-      }
+      },
+      { title: 'Kubernetes', href: 'https://kubernetes.io' }
     ],
     other: [
       {
@@ -249,11 +251,22 @@ export const info = () => ({
       {
         title: 'Swarm',
         href: 'https://docs.docker.com/engine/swarm/swarm-tutorial'
-      }
+      },
+      { title: 'Prometheus', href: 'https://prometheus.io/' },
+      { title: 'Grafana', href: 'https://grafana.com/' },
+      { title: 'Kibana', href: 'https://www.elastic.co/kibana/' }
     ]
   },
   experience: {
     workingExperience: [
+      {
+        year: 'May. 2021 - Current',
+        position: 'Blockchain Developer',
+        company: '1inch',
+        href: 'https://1inch.io/',
+        details:
+          'Development of microservices for DeFi project 1inch and DeFi/DAO protocols.'
+      },
       {
         year: 'Jan. 2021 - Apr. 2021',
         position: 'Frontend Developer',
@@ -315,6 +328,38 @@ export const info = () => ({
     ]
   },
   portfolios: [
+    {
+      title: '1inch',
+      image: oneInch,
+      position: 'Blockchain Developer',
+      href: 'https://1inch.io/',
+      skills: [
+        { title: 'Node.js', href: 'https://nodejs.org/en/' },
+        { title: 'Typescript', href: 'https://www.typescriptlang.org/' },
+        { title: 'Golang', href: 'https://go.dev/' },
+        { title: 'Nest.js', href: 'https://nestjs.com/' },
+        {
+          title: 'Solidity',
+          href: 'https://docs.soliditylang.org/en/v0.8.10/'
+        },
+        { title: 'Kubernetes', href: 'https://kubernetes.io' },
+        { title: 'Prometheus', href: 'https://prometheus.io/' },
+        { title: 'Grafana', href: 'https://grafana.com/' },
+        { title: 'Kibana', href: 'https://www.elastic.co/kibana/' },
+        { title: 'Postgres', href: 'https://www.postgresql.org/' },
+        { title: 'Redis', href: 'https://redis.io/' }
+      ],
+      content: [
+        'Development of microservices for DeFi project 1inch and DeFi/DAO protocols.',
+        '1inch project is leader in the decentralized finance (DeFi).'
+      ],
+      progress: [
+        'Backend microservices development with Node.js and Golang.',
+        'Protocol implementation from some DeFi projects and liquidity providers.',
+        'Library development for Nest.js.',
+        `Kubernetes, Grafana and Prometheus adaptation for microservices development.`
+      ]
+    },
     {
       title: 'Pure',
       image: pure,

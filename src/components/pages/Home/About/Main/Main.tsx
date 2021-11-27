@@ -111,14 +111,6 @@ const Main = ({ prefix }: IMainProps) => {
                 {info().information.address}
               </li>
             )}
-            {!info().information.freelanceStatus ? null : (
-              <li>
-                <Paragraph selection={false}>
-                  <b>Freelance</b>
-                </Paragraph>{' '}
-                {info().information.freelanceStatus}
-              </li>
-            )}
           </List$>
           <Button href={`${prefix}/d.brakk-cv.pdf`}>Download CV</Button>
         </Block>

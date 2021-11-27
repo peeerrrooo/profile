@@ -10,6 +10,7 @@ import ReactMarkdown from 'react-markdown'
 export interface IItemProps extends IService {}
 
 const Item = ({ icon, title, details }: IItemProps) => {
+  console.log(details.trim())
   return (
     <Root$>
       <IconContainer$>
@@ -18,7 +19,14 @@ const Item = ({ icon, title, details }: IItemProps) => {
 
       <Title$>{title}</Title$>
       <Paragraph>
-        <ReactMarkdown>{details}</ReactMarkdown>
+        <ReactMarkdown
+          components={{
+            li: ({ children }) => <Paragraph>{children}</Paragraph>,
+            ul: ({ children }) => <Paragraph>{children}</Paragraph>
+          }}
+        >
+          {details.trim()}
+        </ReactMarkdown>
       </Paragraph>
     </Root$>
   )
