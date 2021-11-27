@@ -7,7 +7,6 @@ COPY package.json yarn.lock ./
 RUN yarn install
 COPY babel.config.js next.config.js next-env.d.ts server.js tsconfig.json .eslintrc.js .eslintignore .prettierignore ./
 COPY config ./config
-COPY public ./public
 COPY src ./src
 RUN FRONTEND_PREFIX=$FRONTEND_PREFIX yarn build
 
@@ -25,7 +24,6 @@ COPY package.json yarn.lock ./
 RUN yarn install --prod
 COPY babel.config.js next.config.js next-env.d.ts server.js tsconfig.json .eslintrc.js .eslintignore .prettierignore ./
 COPY config ./config
-COPY public ./public
 COPY src ./src
 COPY --from=build /app/build ./build
 

@@ -14,6 +14,8 @@ services:
       - API_URI=${API_URI}
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
       - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+    volumes:
+    - ./public:/app/public
 #  nginx:
 #    image: nginx:latest
 #    volumes:
