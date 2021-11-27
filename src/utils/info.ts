@@ -260,7 +260,7 @@ export const info = () => ({
   experience: {
     workingExperience: [
       {
-        year: 'May. 2021 - Current',
+        year: 'May. 2021 - Present',
         position: 'Blockchain Developer',
         company: '1inch',
         href: 'https://1inch.io/',
