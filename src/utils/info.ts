@@ -6,6 +6,7 @@ import finservice from 'resources/img/finservice.svg'
 import pure from 'resources/img/pure.svg'
 import zaaptv from 'resources/img/zaaptv.png'
 
+// eslint-disable-next-line max-lines-per-function
 export const info = () => ({
   menu: {
     home: 'Home',
@@ -43,20 +44,26 @@ export const info = () => ({
     {
       title: 'Design Systems',
       icon: 'IoMdColorPalette',
-      details:
-        'Architecture design component library and style themes. Creation of development tools and integration of ui kit into the existing system.'
+      details: `
+      - Architecture design component library and style themes.
+      - Creation of development tools and integration of ui kit into the existing system.
+      `
     },
     {
       title: 'Frontend Development',
       icon: 'FiCode',
-      details:
-        'Implementation of responsive code for mobile devices, tablets and laptops. Creation of single page applications and isomorphic platforms.'
+      details: `
+      - Implementation of responsive code for mobile devices, tablets and laptops.
+      - Creation of single page applications and isomorphic platforms.
+      `
     },
     {
       title: 'Backend Development',
       icon: 'FiServer',
-      details:
-        'Designing a microservices architecture focused on the real-time client side. Implementation of code based on websockets.'
+      details: `
+      - Designing a microservices architecture focused on the real-time client side.
+      - Implementation of code based on websockets.
+      `
     }
   ],
   skills: {
@@ -425,8 +432,7 @@ export const info = () => ({
         },
         {
           title: 'Bluetooth Low Energy',
-          href:
-            'https://www.bluetooth.com/blog/4-essential-tools-for-every-bluetooth-low-energy-developer'
+          href: 'https://www.bluetooth.com/blog/4-essential-tools-for-every-bluetooth-low-energy-developer'
         },
         {
           title: 'C++11',
@@ -459,6 +465,7 @@ export const info = () => ({
       ],
       content: [
         'Creation of software for an embedded system of a scooter on-board computer connected with the infrastructure of the Internet of Things.',
+        // eslint-disable-next-line max-len
         'The on-board computer has a human machine interface for the scooter touchscreen. And also a set of background processes that control the work with the Internet of Things gateway and with devices based on Bluetooth Low Energy. The operating system is its own assembly of Yocto Linux.'
       ],
       progress: [
@@ -547,6 +554,7 @@ export const info = () => ({
       ],
       content: [
         'Creation of software for SmartTV set-top boxes of various digital providers.',
+        // eslint-disable-next-line max-len
         'The interface of the final SmartTV set-top box looks like a regular Youtube TV-style interface. However, "under the hood" it is presented as a cross-browser HTML5 application base on Webkit & Qt Webkit. Each version of the set-top box has its own version of the browser.'
       ],
       progress: [

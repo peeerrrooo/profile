@@ -10,7 +10,6 @@
     "outDir": "artifacts",
     "rootDirs": [
       ".",
-      "../shared"
     ],
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
@@ -76,7 +75,8 @@
       "tslib": [
         "node_modules/tslib/tslib.d.ts"
       ]
-    }
+    },
+    "incremental": true
   },
   "types": [
     "react",
@@ -88,7 +88,7 @@
   ],
   "include": [
     "next-env.d.ts",
-    "./.storybook/*.ts",
+    "./12312321/*.ts",
     "./src/*.ts",
     "./src/*.tsx",
     "**/*.ts",

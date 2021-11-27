@@ -1,4 +1,5 @@
 apiUri: "/api"
+port: 3333
 prefix: ""
 telegramToken: ""
 telegramChatId: ""

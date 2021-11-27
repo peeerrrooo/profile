@@ -5,6 +5,7 @@ import { Paragraph } from 'ui/Typography'
 import { lighten } from 'styles/helpers'
 import styled from 'styled-components'
 import { IService } from 'providers/types/service'
+import ReactMarkdown from 'react-markdown'
 
 export interface IItemProps extends IService {}
 
@@ -16,7 +17,9 @@ const Item = ({ icon, title, details }: IItemProps) => {
       </IconContainer$>
 
       <Title$>{title}</Title$>
-      <Paragraph>{details}</Paragraph>
+      <Paragraph>
+        <ReactMarkdown>{details}</ReactMarkdown>
+      </Paragraph>
     </Root$>
   )
 }

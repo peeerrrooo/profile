@@ -9,21 +9,21 @@ nconf.formats.yaml = require('nconf-yaml')
 const cfg = nconf.argv()
 
 try {
-    const stat = fs.statSync(configFile)
-    if (stat && stat.isFile()) {
-        cfg.file({
-            file: configFile,
-            format: nconf.formats.yaml
-        })
-    }
-    cfg.env()
+  const stat = fs.statSync(configFile)
+  if (stat && stat.isFile()) {
+    cfg.file({
+      file: configFile,
+      format: nconf.formats.yaml
+    })
+  }
+  cfg.env()
 } catch (e) {
-    cfg.env()
+  cfg.env()
 }
 
 const config = {
-    telegramToken: cfg.get('TELEGRAM_TOKEN') || cfg.get('telegramToken') || '',
-    telegramChatId: cfg.get('TELEGRAM_CHAT_ID') || cfg.get('telegramChatId') || ''
+  telegramToken: cfg.get('TELEGRAM_TOKEN') || cfg.get('telegramToken') || '',
+  telegramChatId: cfg.get('TELEGRAM_CHAT_ID') || cfg.get('telegramChatId') || ''
 }
 
 module.exports = config

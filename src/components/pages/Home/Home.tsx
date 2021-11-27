@@ -13,9 +13,9 @@ const Home = () => {
     <Page title="Portfolio" metaDescription={info().information.aboutContent}>
       <Layout>
         <Main />
+        <Portfolio />
         <About />
         <Resume />
-        <Portfolio />
         <Contact />
       </Layout>
     </Page>

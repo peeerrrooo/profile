@@ -13,17 +13,23 @@ class MenuModel extends BaseModel implements IMenuModel {
   }
 
   HOME_BLOCK = 'home'
+
   ABOUT_BLOCK = 'about'
+
   RESUME_BLOCK = 'resume'
+
   PORTFOLIO_BLOCK = 'portfolio'
+
   CONTACT_BLOCK = 'contact'
 
   @observable active = 'home'
 
   @observable opened = false
+
   @observable blur = false
 
   disableScroll = false
+
   scrollActiveMenu = ''
 
   postInit = async () => {

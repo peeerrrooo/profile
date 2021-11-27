@@ -51,6 +51,11 @@ const Menu = inject((store: IModels) => ({
                 title={info().menu.home}
               />
               <Item
+                id="portfolio"
+                blockId={MenuModel!.PORTFOLIO_BLOCK}
+                title={info().menu.portfolio}
+              />
+              <Item
                 id="about"
                 blockId={MenuModel!.ABOUT_BLOCK}
                 title={info().menu.about}
@@ -59,11 +64,6 @@ const Menu = inject((store: IModels) => ({
                 id="resume"
                 blockId={MenuModel!.RESUME_BLOCK}
                 title={info().menu.resume}
-              />
-              <Item
-                id="portfolio"
-                blockId={MenuModel!.PORTFOLIO_BLOCK}
-                title={info().menu.portfolio}
               />
               <Item
                 id="contact"

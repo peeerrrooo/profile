@@ -3,6 +3,7 @@ import { FeedbackProvider } from 'providers/api/feedbackProvider'
 
 class Providers {
   FeedbackProvider!: FeedbackProvider
+
   ConfigProvider!: ConfigProvider
 
   init() {

@@ -154,7 +154,7 @@ const generateMainCss = (props: IBlockProps) => {
     (isSafe(props.centered) && props.centered)
   const cursor = () => {
     if (props.cursor) return props.cursor
-    if (!!props.onClick) return 'pointer'
+    if (props.onClick) return 'pointer'
     return false
   }
   const display = () => {

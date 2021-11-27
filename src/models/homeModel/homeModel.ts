@@ -1,5 +1,4 @@
-import _ from 'lodash'
-import { makeObservable, observable, computed, action } from 'mobx'
+import { makeObservable, observable, computed } from 'mobx'
 import { isSafe } from 'utils/object'
 import { validEmail } from 'utils/email'
 import { BaseModel } from '../baseModel'
@@ -15,11 +14,17 @@ class HomeModel extends BaseModel implements IHomeModel {
   MESSAGE_BLOCK = 'feedback:message'
 
   @observable name = ''
+
   @observable email = ''
+
   @observable message = ''
+
   @observable sendingMessage = false
+
   @observable successSend = false
+
   @observable errorSend = false
+
   @observable isChangeForm = false
 
   @computed get validName() {

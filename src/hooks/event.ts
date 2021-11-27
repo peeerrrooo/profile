@@ -14,7 +14,7 @@ function useEvent<T extends HTMLElement = HTMLDivElement>(
       savedHandler.current = handler
     }
     const eventListener = (event: Event) => {
-      if (!!savedHandler?.current) {
+      if (savedHandler?.current) {
         savedHandler.current(event)
       }
     }

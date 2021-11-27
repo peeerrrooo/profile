@@ -17,7 +17,9 @@ export interface IInitParams {
 
 class Models implements IModels {
   GlobalModel!: IGlobalModel
+
   MenuModel!: IMenuModel
+
   HomeModel!: IHomeModel
 
   hydrated = false

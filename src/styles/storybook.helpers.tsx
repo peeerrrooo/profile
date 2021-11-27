@@ -1,7 +1,7 @@
 import React, { ComponentType, ReactNode } from 'react'
-import { StoryApi } from '@storybook/addons/dist/types'
-import { StoryFnReactReturnType } from '@storybook/react/dist/client/preview/types'
+import { StoryApi } from '@storybook/addons'
 import { ICommonProps, IFontProps } from 'styles/helpers'
+import { StoryFnReactReturnType } from '@storybook/react/dist/ts3.9/client/preview/types'
 
 const defaultContent =
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A fugiat officia unde! Cum, dolorem eaque eos ipsum nam nulla pariatur ratione sunt suscipit totam? Doloremque eum eveniet iste totam voluptas!'

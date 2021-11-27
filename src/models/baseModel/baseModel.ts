@@ -15,7 +15,9 @@ export interface IInitParams {
 
 class BaseModel {
   fields: Field[] = []
+
   protected Providers!: IProviders
+
   protected Models!: IModels
 
   constructor(params: IInitParams) {

@@ -8,6 +8,7 @@ import { action } from '@storybook/addon-actions'
 const stories = storiesOf('Block', module)
 
 const content =
+  // eslint-disable-next-line max-len
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eos exercitationem explicabo ipsum magnam nemo numquam quis saepe. Corporis deserunt facere natus, necessitatibus quibusdam ut velit. Cumque doloremque doloribus molestiae possimus, quidem repudiandae suscipit? Earum iste molestias nisi quisquam, reprehenderit tempore voluptas. Aliquam, beatae cumque facere molestias sapiente vitae? Quisquam.'
 const contentShort = 'Lorem ipsum dolor sit amet'
 

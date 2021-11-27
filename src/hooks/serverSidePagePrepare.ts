@@ -11,23 +11,23 @@ export interface IServerSidePagePrepareCallbackParams {
   params: ParsedUrlQuery
 }
 
-export const serverSidePagePrepare = (
-  args: IServerSidePagePrepareParams = {}
-) => async (ctx: Context) => {
-  const { callback } = args
-  const params = ctx.query
-  const models = ctx.req.Models
+export const serverSidePagePrepare =
+  (args: IServerSidePagePrepareParams = {}) =>
+  async (ctx: Context) => {
+    const { callback } = args
+    const params = ctx.query
+    const models = ctx.req.Models
 
-  try {
-    if (callback) {
-      await callback({
-        Models: models,
-        params
-      })
+    try {
+      if (callback) {
+        await callback({
+          Models: models,
+          params
+        })
+      }
+
+      return { props: models.serialize() }
+    } catch (e) {
+      return { props: models.serialize() }
     }
-
-    return { props: models.serialize() }
-  } catch (e) {
-    return { props: models.serialize() }
   }
-}

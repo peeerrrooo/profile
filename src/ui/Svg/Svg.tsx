@@ -43,6 +43,7 @@ const Root$ = styled((props) => {
 
   unsetCommonProps(resolve)
 
+  // @ts-ignore
   return <ReactSVG {...resolve} />
 })<ISvgProps>`
   line-height: 0;

@@ -1,4 +1,4 @@
-import Color from 'color'
+import Color from './colors'
 
 export const placeholderColor = (color: string) => {
   return `
@@ -75,7 +75,7 @@ export const gradientBg = (value: string, deg: number) => {
   return ''
 }
 
-export const hexToRgba = (h: string, opacity = 1) => {
+export function hexToRgba(h, opacity = 1) {
   const hex = h.replace('#', '')
   let r = 0
   let g = 0

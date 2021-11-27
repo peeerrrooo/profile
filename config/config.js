@@ -23,6 +23,7 @@ try {
 
 const config = {
   prefix: cfg.get('FRONTEND_PREFIX') || cfg.get('prefix') || '',
+  port: Number(cfg.get('PORT') || cfg.get('port')),
   apiUri: cfg.get('API_URI') || cfg.get('apiUri'),
   prod: cfg.get('NODE_ENV') === 'production'
 }

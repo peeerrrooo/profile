@@ -1,4 +1,4 @@
-FROM node:14.15.1 as build
+FROM node:16.13.0 as build
 
 ARG FRONTEND_PREFIX=""
 
@@ -11,7 +11,7 @@ COPY public ./public
 COPY src ./src
 RUN FRONTEND_PREFIX=$FRONTEND_PREFIX yarn build
 
-FROM node:14.15.1-alpine
+FROM node:16.13.0-alpine
 
 WORKDIR /app
 

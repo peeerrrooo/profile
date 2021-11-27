@@ -24,11 +24,11 @@ import {
 
 export { unit2css, color2css, mediaPropsToCss }
 
-export interface IFontProps extends IFontPropsAlias {}
+export type IFontProps = IFontPropsAlias
 export { unsetFontProps, applyFontProps, fontProps2css }
 
-export interface ICommonProps extends ICommonPropsAlias {}
-export interface ICommonPropsOptions extends ICommonPropsOptionsAlias {}
+export type ICommonProps = ICommonPropsAlias
+export type ICommonPropsOptions = ICommonPropsOptionsAlias
 export { unsetCommonProps, applyCommonProps, commonProps2css }
 export {
   placeholderColor,
