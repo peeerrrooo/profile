@@ -10,7 +10,6 @@ import ReactMarkdown from 'react-markdown'
 export interface IItemProps extends IService {}
 
 const Item = ({ icon, title, details }: IItemProps) => {
-  console.log(details.trim())
   return (
     <Root$>
       <IconContainer$>
