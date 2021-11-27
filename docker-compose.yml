@@ -14,15 +14,15 @@ services:
       - API_URI=${API_URI}
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
       - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
-  nginx:
-    image: nginx:latest
-    volumes:
-    - ./nginx.example.conf:/etc/nginx/nginx.conf
-    - /etc/certs/profile:/etc/certs/profile
-    - /var/cache/nginx:/var/cache/nginx
-    - /var/log/nginx:/var/log/nginx
-    ports:
-    - 80:80
-    - 443:443
-    depends_on:
-      - frontend
+#  nginx:
+#    image: nginx:latest
+#    volumes:
+#    - ./nginx.example.conf:/etc/nginx/nginx.conf
+#    - /etc/certs/profile:/etc/certs/profile
+#    - /var/cache/nginx:/var/cache/nginx
+#    - /var/log/nginx:/var/log/nginx
+#    ports:
+#    - 80:80
+#    - 443:443
+#    depends_on:
+#      - frontend
