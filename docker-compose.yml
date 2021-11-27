@@ -18,7 +18,8 @@ services:
     image: nginx:latest
     volumes:
     - ./nginx.example.conf:/etc/nginx/nginx.conf
-    - ./etc/certs/profile:/etc/certs/profile
+    - /etc/certs/profile:/etc/certs/profile
+    - /var/cache/nginx:/var/cache/nginx
     ports:
     - 80:80
     depends_on:
