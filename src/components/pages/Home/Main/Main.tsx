@@ -76,7 +76,7 @@ const Main = inject('MenuModel')(
             fpsLimit: 120,
             particles: {
               number: {
-                value: 300,
+                value: 200,
                 density: {
                   enable: true
                 }
@@ -85,10 +85,10 @@ const Main = inject('MenuModel')(
                 value: '#ffffff'
               },
               opacity: {
-                value: 0.2
+                value: 0.1
               },
               size: {
-                value: 5,
+                value: 4,
                 random: true,
                 anim: {
                   speed: 1,
@@ -100,7 +100,7 @@ const Main = inject('MenuModel')(
               },
               move: {
                 outModes: {
-                  default: 'out'
+                  default: 'bounceVertical'
                 },
                 straight: false,
                 enable: true,
