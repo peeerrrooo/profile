@@ -81,7 +81,7 @@ const Root$ = styled((props: IParagraphProps) => {
   unsetFontProps(resolve)
   unsetCommonProps(resolve)
 
-  return React.createElement('p', resolve)
+  return React.createElement('div', resolve)
 })<IParagraphProps>`
   ${(props) => generateMainCss(props)}
   ${(props) => mediaPropsToCss('media', props, generateMainCss)}

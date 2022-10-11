@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Title, Text, Paragraph } from 'ui/Typography'
 import { info } from 'utils/info'
 import { Block } from 'ui/Block'
-import UiParticles, { IParticlesParams } from 'react-particles-js'
+import Particles from 'react-tsparticles'
+import { loadFull } from 'tsparticles'
+import { Engine } from 'tsparticles-engine'
 import { Icon } from 'ui/Icon'
 import { IMenuModel } from 'models/menuModel/types'
 import { inject, observer } from 'mobx-react'
@@ -13,42 +15,12 @@ export interface IMainProps {
   MenuModel?: IMenuModel
 }
 
-const particleConfig: IParticlesParams = {
-  particles: {
-    number: {
-      value: 160,
-      density: {
-        enable: false
-      }
-    },
-    color: {
-      value: '#ffffff'
-    },
-    opacity: {
-      value: 0.1
-    },
-    size: {
-      value: 5,
-      random: true,
-      anim: {
-        speed: 4,
-        size_min: 0.3
-      }
-    },
-    line_linked: {
-      enable: false
-    },
-    move: {
-      random: true,
-      speed: 1,
-      direction: 'top',
-      out_mode: 'out'
-    }
-  }
-}
-
 const Main = inject('MenuModel')(
   observer(({ MenuModel }: IMainProps) => {
+    const particlesInit = useCallback(async (engine: Engine) => {
+      await loadFull(engine)
+    }, [])
+
     return (
       <Container titleId="home" blockId={MenuModel!.HOME_BLOCK}>
         <Block
@@ -98,14 +70,55 @@ const Main = inject('MenuModel')(
           </Block>
         </Block>
 
-        <Particles$ params={particleConfig} />
+        <Particles$
+          init={particlesInit}
+          options={{
+            fpsLimit: 120,
+            particles: {
+              number: {
+                value: 300,
+                density: {
+                  enable: true
+                }
+              },
+              color: {
+                value: '#ffffff'
+              },
+              opacity: {
+                value: 0.2
+              },
+              size: {
+                value: 5,
+                random: true,
+                anim: {
+                  speed: 1,
+                  size_min: 0.3
+                }
+              },
+              line_linked: {
+                enable: false
+              },
+              move: {
+                outModes: {
+                  default: 'out'
+                },
+                straight: false,
+                enable: true,
+                random: true,
+                speed: 3,
+                direction: 'bottomLeft'
+              }
+            },
+            detectRetina: true
+          }}
+        />
       </Container>
     )
   })
 )
 
 //#region Styled components
-const Particles$ = styled(UiParticles)`
+const Particles$ = styled(Particles)`
   position: absolute;
   left: 0;
   top: 0;
