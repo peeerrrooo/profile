@@ -6,7 +6,7 @@ export const Colors = {
   body: '#a4acc4',
   heading: '#ffffff',
   border: '#2e344e',
-  bgBody: '#10121b',
+  bgBody: '#100e1f',
   bgDark: '#0c0e16',
   white: '#ffffff',
 

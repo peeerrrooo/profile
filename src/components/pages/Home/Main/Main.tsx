@@ -1,10 +1,8 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Title, Text, Paragraph } from 'ui/Typography'
 import { info } from 'utils/info'
 import { Block } from 'ui/Block'
 import Particles from 'react-tsparticles'
-import { loadFull } from 'tsparticles'
-import { Engine } from 'tsparticles-engine'
 import { Icon } from 'ui/Icon'
 import { IMenuModel } from 'models/menuModel/types'
 import { inject, observer } from 'mobx-react'
@@ -17,9 +15,9 @@ export interface IMainProps {
 
 const Main = inject('MenuModel')(
   observer(({ MenuModel }: IMainProps) => {
-    const particlesInit = useCallback(async (engine: Engine) => {
-      await loadFull(engine)
-    }, [])
+    // const particlesInit = useCallback(async (engine: Engine) => {
+    //   await loadFull(engine)
+    // }, [])
 
     return (
       <Container titleId="home" blockId={MenuModel!.HOME_BLOCK}>
@@ -71,7 +69,7 @@ const Main = inject('MenuModel')(
         </Block>
 
         <Particles$
-          init={particlesInit}
+          // init={particlesInit}
           options={{
             fpsLimit: 120,
             particles: {
