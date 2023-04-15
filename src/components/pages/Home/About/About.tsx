@@ -6,7 +6,6 @@ import { IGlobalModel } from 'models/globalModel/types'
 import { inject, observer } from 'mobx-react'
 import { Container } from '../common/Container'
 import { Main } from './Main'
-import { Services } from './Services'
 
 export interface IAboutProps {
   MenuModel?: IMenuModel
@@ -25,8 +24,6 @@ const About = inject((store: IModels) => ({
         title={info().menu.aboutHeader}
       >
         <Main prefix={GlobalModel!.config.prefix} />
-
-        <Services />
       </Container>
     )
   })

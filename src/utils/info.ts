@@ -40,32 +40,6 @@ export const info = () => ({
     address: 'Russia, Moscow',
     aboutImage
   },
-  services: [
-    {
-      title: 'Design Systems',
-      icon: 'IoMdColorPalette',
-      details: `
-- Architecture design component library and style themes.
-- Creation of development tools and integration of ui kit into the existing system.
-      `
-    },
-    {
-      title: 'Frontend Development',
-      icon: 'FiCode',
-      details: `
-- Implementation of responsive code for mobile devices, tablets and laptops.
-- Creation of single page applications and isomorphic platforms.
-      `
-    },
-    {
-      title: 'Backend Development',
-      icon: 'FiServer',
-      details: `
-- Designing a microservices architecture focused on the real-time client side.
-- Implementation of code based on websockets.
-      `
-    }
-  ],
   skills: {
     main: [
       {
