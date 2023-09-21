@@ -1,8 +1,6 @@
 name: 'Terragrunt GitHub Actions'
-on:
-  push:
-    branches:
-      - master
+on: workflow_dispatch
+
 env:
   tf_version: 'latest'
   tg_version: 'latest'
