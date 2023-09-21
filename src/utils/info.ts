@@ -43,10 +43,6 @@ export const info = () => ({
   skills: {
     main: [
       {
-        title: 'React',
-        href: 'https://reactjs.org'
-      },
-      {
         title: 'Node.js',
         href: 'https://nodejs.org'
       },
@@ -54,130 +50,38 @@ export const info = () => ({
         title: 'Typescript',
         href: 'https://www.typescriptlang.org'
       },
+      { title: 'Nest.js', href: 'https://nestjs.com' },
+      { title: 'Solidity', href: 'https://soliditylang.org' },
+      { title: 'Golang', href: 'https://golang.org' },
+      { title: 'Kubernetes', href: 'https://kubernetes.io' },
+      {
+        title: 'React',
+        href: 'https://reactjs.org'
+      },
       {
         title: 'Next.js',
         href: 'https://nextjs.org'
       },
-      { title: 'Nest.js', href: 'https://nestjs.com/' },
       {
         title: 'MobX',
         href: 'https://mobx.js.org'
       },
       {
-        title: 'Redux',
-        href: 'https://redux.js.org'
-      },
-      {
-        title: 'Styled',
-        href: 'https://styled-components.com'
-      },
-      {
-        title: 'Storybook',
-        href: 'https://storybook.js.org'
-      },
-      {
         title: 'React Native',
         href: 'https://reactnative.dev'
-      },
-      {
-        title: 'Webpack',
-        href: 'https://webpack.js.org'
-      },
-      {
-        title: 'Strapi',
-        href: 'https://strapi.io'
-      },
-      {
-        title: 'Electron',
-        href: 'https://www.electronjs.org'
-      },
-      { title: 'Kubernetes', href: 'https://kubernetes.io' }
+      }
     ],
     other: [
-      {
-        title: 'PostCSS',
-        href: 'https://postcss.org'
-      },
-      {
-        title: 'JSS',
-        href: 'https://cssinjs.org'
-      },
-      {
-        title: 'SVG',
-        href: 'https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial'
-      },
-      {
-        title: 'Showdown',
-        href: 'https://github.com/showdownjs/showdown'
-      },
-      {
-        title: 'MJML',
-        href: 'https://mjml.io'
-      },
-      {
-        title: 'OpenGraph',
-        href: 'https://ogp.me'
-      },
-      {
-        title: 'CKEditor',
-        href: 'https://ckeditor.com'
-      },
-      {
-        title: 'Monaco',
-        href: 'https://microsoft.github.io/monaco-editor'
-      },
-      {
-        title: 'Material Design',
-        href: 'https://material-ui.com'
-      },
-      {
-        title: 'Ant Design',
-        href: 'https://ant.design'
-      },
-      {
-        title: 'Rsuite Design',
-        href: 'https://rsuitejs.com'
-      },
-      {
-        title: 'Gulp',
-        href: 'https://gulpjs.com'
-      },
-      {
-        title: 'Express',
-        href: 'https://expressjs.com'
-      },
-      {
-        title: 'Koa',
-        href: 'https://koajs.com'
-      },
-      {
-        title: 'Nginx',
-        href: 'https://nginx.org'
-      },
-      {
-        title: 'Golang',
-        href: 'https://golang.org'
-      },
-      {
-        title: 'Gorm',
-        href: 'https://gorm.io'
-      },
       {
         title: 'Gin',
         href: 'https://github.com/gin-gonic/gin'
       },
       {
-        title: 'Gorilla',
-        href: 'https://www.gorillatoolkit.org'
+        title: 'Terraform',
+        href: 'https://www.terraform.io'
       },
-      {
-        title: 'Logrus',
-        href: 'https://github.com/sirupsen/logrus'
-      },
-      {
-        title: 'Viper',
-        href: 'https://github.com/spf13/viper'
-      },
+      { title: 'Prometheus', href: 'https://prometheus.io/' },
+      { title: 'Grafana', href: 'https://grafana.com/' },
       {
         title: 'Postgres',
         href: 'https://www.postgresql.org'
@@ -199,36 +103,29 @@ export const info = () => ({
         href: 'https://mqtt.org'
       },
       {
+        title: 'Redux',
+        href: 'https://redux.js.org'
+      },
+      {
+        title: 'Styled',
+        href: 'https://styled-components.com'
+      },
+      {
+        title: 'Storybook',
+        href: 'https://storybook.js.org'
+      },
+      {
         title: 'C++11',
         href: 'https://isocpp.org'
       },
       {
-        title: 'Qt',
+        title: 'QT',
         href: 'https://www.qt.io'
-      },
-      {
-        title: 'Qml',
-        href: 'https://doc.qt.io/qt-5/qtqml-index.html'
-      },
-      {
-        title: 'Makefile',
-        href: 'https://www.gnu.org/software/make/manual/make.html'
       },
       {
         title: 'Yocto Linux',
         href: 'https://www.yoctoproject.org'
-      },
-      {
-        title: 'Docker',
-        href: 'https://www.docker.com'
-      },
-      {
-        title: 'Swarm',
-        href: 'https://docs.docker.com/engine/swarm/swarm-tutorial'
-      },
-      { title: 'Prometheus', href: 'https://prometheus.io/' },
-      { title: 'Grafana', href: 'https://grafana.com/' },
-      { title: 'Kibana', href: 'https://www.elastic.co/kibana/' }
+      }
     ]
   },
   experience: {

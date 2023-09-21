@@ -27,7 +27,7 @@ const Tag = ({
       case 'small':
         return '5px 10px'
       default:
-        return '10px 20px'
+        return '8px 16px'
     }
   }
 
@@ -36,7 +36,7 @@ const Tag = ({
       case 'small':
         return '1rem'
       default:
-        return '1.14rem'
+        return '1rem'
     }
   }
 

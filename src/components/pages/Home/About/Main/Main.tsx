@@ -112,7 +112,7 @@ const Main = ({ prefix }: IMainProps) => {
               </li>
             )}
           </List$>
-          <Button href={`${prefix}/d.brakk-cv.pdf`}>Download CV</Button>
+          <Button href={`${prefix}/d.brakk-profile-cv.pdf`}>Download CV</Button>
         </Block>
       </Block>
     </>
