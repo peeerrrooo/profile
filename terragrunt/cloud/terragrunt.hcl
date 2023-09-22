@@ -24,3 +24,7 @@ dependencies {
     "${get_terragrunt_dir()}/../build"
   ]
 }
+
+include "root" {
+  path = find_in_parent_folders()
+}
