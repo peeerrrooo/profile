@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: 'Checkout'
-        run: echo ${{ secrets.authorized_key }} > ${{ env.tf_working_dir }}/authorized_key.json
+      - name: 'Generate authorized_key.json'
+        run: cat <<EOF > ${{ env.tf_working_dir }}/authorized_key.json ${{ secrets.authorized_key }} EOF
 #      - name: 'Terragrunt Init'
 #        uses: the-commons-project/terragrunt-github-actions@master
 #        with:
