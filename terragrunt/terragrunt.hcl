@@ -1,3 +1,7 @@
+locals {
+  service_account_id = jsondecode(file("${get_terragrunt_dir()}/authorized_key.json"))["service_account_id"]
+}
+
 generate "backend" {
   path = "backend.tf"
   if_exists = "overwrite_terragrunt"
