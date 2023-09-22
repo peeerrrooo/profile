@@ -7,5 +7,4 @@ inputs = {
   registry_password = file("${get_terragrunt_dir()}/authorized_key.json")
   domain_name = "dbrakk.tech"
   app_name = "profile"
-  app_version = "v2"
 }
