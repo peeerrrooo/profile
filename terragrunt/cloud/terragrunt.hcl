@@ -7,12 +7,8 @@ locals {
 }
 
 inputs = merge(local.common_vars.inputs, {
-  cloud_id = "b1geqp7vebihvsequt3h"
-  folder_id = "b1g2usfr7b3383v05isg"
   auth_file_path = "${get_terragrunt_dir()}/../authorized_key.json"
   image_name = dependency.build.outputs.image_name
-  domain_name = "dbrakk.tech"
-  certificate_id = "fpqljbhhvp82d1s2l29c"
 })
 
 dependency "build" {
