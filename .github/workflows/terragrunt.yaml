@@ -25,9 +25,9 @@ jobs:
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_comment: true
         env:
-          TF_VAR_REGISTRY_ID: ${{ secrects.REGISTRY_ID }}
-          TF_VAR_CLOUD_ID: ${{ secrects.CLOUD_ID }}
-          TF_VAR_FOLDER_ID: ${{ secrects.FOLDER_ID }}
-          TF_VAR_CERTIFICATE_ID: ${{ secrects.CERTIFICATE_ID }}
-          TF_VAR_TELEGRAM_TOKEN: ${{ secrects.TELEGRAM_TOKEN }}
-          TF_VAR_TELEGRAM_CHAT_ID: ${{ secrects.TELEGRAM_CHAT_ID }}
+          TF_VAR_REGISTRY_ID: ${{ secrets.REGISTRY_ID }}
+          TF_VAR_CLOUD_ID: ${{ secrets.CLOUD_ID }}
+          TF_VAR_FOLDER_ID: ${{ secrets.FOLDER_ID }}
+          TF_VAR_CERTIFICATE_ID: ${{ secrets.CERTIFICATE_ID }}
+          TF_VAR_TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TF_VAR_TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
