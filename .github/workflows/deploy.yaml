@@ -8,7 +8,7 @@ on:
 
 env:
   tf_version: '1.5.7'
-  tg_version: 'v0.50.17'
+  tg_version: '0.50.17'
   tg_working_dir: './terragrunt'
   image_name: "app-profile"
 
