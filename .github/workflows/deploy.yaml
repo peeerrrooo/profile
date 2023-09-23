@@ -11,7 +11,6 @@ env:
   tg_version: 'latest'
   tf_working_dir: './terragrunt'
   image_name: "app-profile"
-  image: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
 
 jobs:
   build:
@@ -39,7 +38,7 @@ jobs:
           provenance: false
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags: ${{ env.image }}
+          tags: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
       - name: 'Generate authorized_key.json'
         run: echo $AUTHORIZED_KEY ${{ env.tf_working_dir }}/authorized_key.json
         env:
@@ -54,7 +53,7 @@ jobs:
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_comment: true
         env:
-          TF_VAR_image_name: ${{ env.image }}
+          TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
           TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
           TF_VAR_folder_id: ${{ secrets.FOLDER_ID }}
           TF_VAR_certificate_id: ${{ secrets.CERTIFICATE_ID }}
