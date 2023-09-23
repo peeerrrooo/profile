@@ -42,7 +42,7 @@ jobs:
   terragrunt:
     name: 'Terragrunt deploy'
     needs: [build]
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: 'Checkout Git'
         uses: actions/checkout@v3
