@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: 'Generate authorized_key.json'
-        run: echo $AUTHORIZED_KEY ${{ env.tg_working_dir }}/authorized_key.json
+        run: echo "lollll" ${{ env.tg_working_dir }}/authorized_key.json
         env:
           AUTHORIZED_KEY: ${{ secrets.AUTHORIZED_KEY }}
       - name: 'Test key'
