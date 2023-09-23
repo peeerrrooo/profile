@@ -41,7 +41,8 @@ jobs:
           platforms: linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags: ${{ secrets.registry_id }}/${{ env.app_name }}:${{ secrets.app_version }}
+#          tags: ${{ secrets.registry_id }}/${{ env.app_name }}:${{ secrets.app_version }}
+          tags: "cr.yandex/crp38p8uptqkachq3oo4/profile:v2"
 
 #  terragrunt:
 #    name: 'Terragrunt'
