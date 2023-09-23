@@ -10,8 +10,7 @@ env:
   tf_version: 'latest'
   tg_version: 'latest'
   tf_working_dir: './terragrunt'
-  app_name: "profile"
-  registry: "cr.yandex/crp38p8uptqkachq3oo4"
+  image_name: "profile"
 
 jobs:
   build:
@@ -21,16 +20,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: 'Generate authorized_key.json'
-        run: echo $AUTHORIZED_KEY ${{ env.tf_working_dir }}/authorized_key.json
-
       - name: 'Set up Docker Buildx'
         uses: docker/setup-buildx-action@v2
 
       - name: 'Login to Yandex Registry'
         uses: docker/login-action@v2
         with:
-          registry: ${{ env.registry }}
+          registry: ${{ secrets.registry_id }}
           username: json_key
           password: ${{ secrets.authorized_key }}
 
@@ -41,7 +37,7 @@ jobs:
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags: ${{ env.registry }}/${{ env.app_name }}:${{ secrets.app_version }}
+          tags: ${{ secrets.registry_id }}/${{ env.image_name }}:${{ github.event.inputs.app_version }}
 
 #  terragrunt:
 #    name: 'Terragrunt'
