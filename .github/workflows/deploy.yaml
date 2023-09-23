@@ -11,6 +11,7 @@ env:
   tg_version: 'latest'
   tf_working_dir: './terragrunt'
   app_name: "profile"
+  registry: "cr.yandex/crp38p8uptqkachq3oo4"
 
 jobs:
   build:
@@ -29,7 +30,7 @@ jobs:
       - name: 'Login to Yandex Registry'
         uses: docker/login-action@v2
         with:
-          registry: ${{ secrets.registry_id }}
+          registry: ${{ env.registry }}
           username: json_key
           password: ${{ secrets.authorized_key }}
 
@@ -40,8 +41,7 @@ jobs:
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags: "${{ secrets.registry_id }}/${{ env.app_name }}:${{ secrets.app_version }}"
-#          tags: "cr.yandex/crp38p8uptqkachq3oo4/profile:v2"
+          tags: ${{ env.registry }}/${{ env.app_name }}:${{ secrets.app_version }}
 
 #  terragrunt:
 #    name: 'Terragrunt'
