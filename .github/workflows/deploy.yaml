@@ -60,8 +60,8 @@ jobs:
 
       - name: Setup Terragrunt
         run: |
-          wget -O /usr/bin/terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/$TG_VERSION/terragrunt_linux_amd64
-          chmod +x /usr/bin/terragrunt
+          wget -O bin/terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/$TG_VERSION/terragrunt_linux_amd64
+          chmod +x bin/terragrunt
 
       - name: 'Terragrunt Plan'
         run: |
