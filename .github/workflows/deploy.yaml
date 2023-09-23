@@ -11,7 +11,7 @@ env:
   tg_version: 'latest'
   tf_working_dir: './terragrunt'
   registry: cr.yandex/${{ secrets.registry_id }}
-  app_name: "profile"
+  app_name: profile
 
 jobs:
   build:
@@ -42,8 +42,7 @@ jobs:
           platforms: linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags:
-            - ${{ secrets.app_version }}
+          tags: ${{ env.app_name }}:${{ secrets.app_version }}
 
 #  terragrunt:
 #    name: 'Terragrunt'
