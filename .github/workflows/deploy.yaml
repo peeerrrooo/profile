@@ -58,7 +58,7 @@ jobs:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
           tg_dir: ${{ env.tg_working_dir }}
-          tg_command: 'plan'
+          tg_command: 'run-all plan'
         env:
           TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
           TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
@@ -74,7 +74,7 @@ jobs:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
           tg_dir: ${{ env.tg_working_dir }}
-          tg_command: 'apply'
+          tg_command: 'run-all apply'
         env:
           TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
           TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
