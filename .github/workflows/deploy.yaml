@@ -39,6 +39,13 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
+  terragrunt:
+    name: 'Terragrunt deploy'
+    needs: [build]
+    runs_on: ubuntu-lates
+    steps:
+      - name: 'Checkout Git'
+        uses: actions/checkout@v3
       - name: 'Generate authorized_key.json'
         run: echo $AUTHORIZED_KEY ${{ env.tf_working_dir }}/authorized_key.json
         env:
