@@ -52,6 +52,11 @@ jobs:
         env:
           AUTHORIZED_KEY: ${{ secrets.AUTHORIZED_KEY }}
 
+      - name: 'Generate .terraformrc'
+        run: echo $TERRAFORMRC > ~/.terraformrc
+        env:
+          TERRAFORMRC: ${{ secrets.TERRAFORMRC }}
+
       - name: 'Terragrunt Plan'
         uses: gruntwork-io/terragrunt-action@v1
         with:
