@@ -37,7 +37,7 @@ jobs:
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags: ${{ secrets.registry_id }}/${{ env.image_name }}:${{ github.event.inputs.app_version }}
+          tags: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
 
 #  terragrunt:
 #    name: 'Terragrunt'
