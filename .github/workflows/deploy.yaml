@@ -10,7 +10,7 @@ env:
   tf_version: 'latest'
   tg_version: 'latest'
   tf_working_dir: './terragrunt'
-  image_name: "profile"
+  image_name: "app-profile"
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
       - name: 'Build and Push Docker Image'
         uses: docker/build-push-action@v4
         with:
-          context: .
+            context: .
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
