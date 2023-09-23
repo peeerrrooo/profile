@@ -36,4 +36,19 @@ jobs:
           TF_VAR_certificate_id: ${{ secrets.CERTIFICATE_ID }}
           TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
           TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: 'Terragrunt Apply'
+        uses: the-commons-project/terragrunt-github-actions@master
+        with:
+          tf_actions_version: ${{ env.tf_version }}
+          tg_actions_version: ${{ env.tg_version }}
+          tf_actions_subcommand: 'apply'
+          tf_actions_working_dir: ${{ env.tf_working_dir }}
+          tf_actions_comment: true
+        env:
+          TF_VAR_registry_id: ${{ secrets.REGISTRY_ID }}
+          TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
+          TF_VAR_folder_id: ${{ secrets.FOLDER_ID }}
+          TF_VAR_certificate_id: ${{ secrets.CERTIFICATE_ID }}
+          TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
+          TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
 
