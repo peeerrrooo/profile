@@ -9,7 +9,7 @@ on:
 env:
   tf_version: '1.5.7'
   tg_version: 'v0.50.17'
-  tf_working_dir: './terragrunt'
+  tg_working_dir: './terragrunt'
   image_name: "app-profile"
 
 jobs:
@@ -52,21 +52,13 @@ jobs:
         env:
           AUTHORIZED_KEY: ${{ secrets.AUTHORIZED_KEY }}
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1.2.1
-        with:
-          terraform_version: ${{ env.tf_version }}
-          terraform_wrapper: false
-
-      - name: Setup Terragrunt
-        run: |
-          wget -O bin/terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/$TG_VERSION/terragrunt_linux_amd64
-          chmod +x bin/terragrunt
-
       - name: 'Terragrunt Plan'
-        run: |
-          cd $tf_working_dir
-          terragrunt run-all plan
+        uses: gruntwork-io/terragrunt-action@v1
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: ${{ env.tg_working_dir }}
+          tg_command: 'plan'
         env:
           TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
           TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
@@ -75,3 +67,4 @@ jobs:
           TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
           TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
