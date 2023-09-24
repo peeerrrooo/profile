@@ -53,9 +53,12 @@ jobs:
           AUTHORIZED_KEY: ${{ secrets.AUTHORIZED_KEY }}
 
       - name: 'Generate .terraformrc'
-        run: echo $TERRAFORMRC > terraformrc.tfrc
+        run: |
+          echo $TERRAFORMRC > terraformrc.tfrc
+          cat terraformrc.tfrc
+          whereis terraformrc.tfrc
         env:
-          TERRAFORMRC: ${{ secrets.TERRAFORM_CLI_RC }}
+          TERRAFORMRC: ${{ vars.TERRAFORMRC }}
 
       - name: 'Terragrunt Plan'
         uses: gruntwork-io/terragrunt-action@v1
