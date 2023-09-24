@@ -54,11 +54,7 @@ jobs:
 
       - name: 'Generate .terraformrc'
         run: |
-          echo $TERRAFORMRC > terraformrc.tfrc
           cat terraformrc.tfrc
-          whereis terraformrc.tfrc
-        env:
-          TERRAFORMRC: ${{ vars.TERRAFORMRC }}
 
       - name: 'Terragrunt Plan'
         uses: gruntwork-io/terragrunt-action@v1
@@ -75,7 +71,7 @@ jobs:
           TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
           TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TF_CLI_CONFIG_FILE: ./terraformrc.tfrc
+          TF_CLI_CONFIG_FILE: terraformrc.tfrc
 
       - name: 'Terragrunt Apply'
         uses: gruntwork-io/terragrunt-action@v1
@@ -92,5 +88,5 @@ jobs:
           TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
           TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TF_CLI_CONFIG_FILE: ./terraformrc.tfrc
+          TF_CLI_CONFIG_FILE: terraformrc.tfrc
 
