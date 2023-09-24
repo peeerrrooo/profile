@@ -53,22 +53,9 @@ jobs:
           AUTHORIZED_KEY: ${{ secrets.AUTHORIZED_KEY }}
 
       - name: 'Generate .terraformrc'
-#        run: echo $TERRAFORMRC > terraformrc.tfrc
-#        env:
-#          TERRAFORMRC: ${{ secrets.TERRAFORM_CLI_RC }}
-          run: |
-            cat <<EOF > terraformrc.tfrc
-provider_installation {
-  network_mirror {
-    url = "https://terraform-mirror.yandexcloud.net/"
-    include = ["registry.terraform.io/*/*"]
-  }
-
-  direct {
-    exclude = ["registry.terraform.io/*/*"]
-  }
-}
-            EOF
+        run: echo $TERRAFORMRC > terraformrc.tfrc
+        env:
+          TERRAFORMRC: ${{ secrets.TERRAFORM_CLI_RC }}
 
       - name: 'Terragrunt Plan'
         uses: gruntwork-io/terragrunt-action@v1
