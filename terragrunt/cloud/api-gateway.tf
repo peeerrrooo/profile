@@ -34,6 +34,12 @@ paths:
         type: serverless_containers
         container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
+ /feedback:
+    post:
+      x-yc-apigateway-integration:
+        type: serverless_containers
+        container_id: "${yandex_serverless_container.profile-site.id}"
+        service_account_id: "${var.service_account_id}"
  /android{*}:
     get:
       x-yc-apigateway-integration:
