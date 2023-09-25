@@ -10,7 +10,7 @@ env:
   tf_version: '1.5.5'
   tg_version: '0.50.17'
   tg_working_dir: './terragrunt'
-  image_name: "app-profile"
+  image_name: "profile-site"
 
 jobs:
   build:

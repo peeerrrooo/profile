@@ -1,5 +1,5 @@
-resource "yandex_serverless_container" "app-container" {
-  name = "profile"
+resource "yandex_serverless_container" "profile-site" {
+  name = "profile-site"
   description = "Profile site container"
   memory = 4096
   cores = 1

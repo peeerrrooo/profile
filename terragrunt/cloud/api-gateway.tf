@@ -1,6 +1,6 @@
 resource "yandex_api_gateway" "app-gateway" {
   depends_on = [
-    yandex_serverless_container.app-container
+    yandex_serverless_container.profile-site
   ]
 
   name = "profile-gateway"
@@ -26,49 +26,49 @@ paths:
     get:
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /d.brakk-profile-cv.pdf:
     get:
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /android{*}:
     get:
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /apple{*}:
     get:
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /favicon{*}:
     get:
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /ms-icon{*}:
     get:
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /robots.txt:
     get:
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /manifest.json:
     get:
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /_next/static/chunks/{file}:
     get:
@@ -80,7 +80,7 @@ paths:
             type: string
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /_next/static/chunks/pages/{file}:
     get:
@@ -92,7 +92,7 @@ paths:
             type: string
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
  /_next/static/{dir}/{file}:
     get:
@@ -109,7 +109,7 @@ paths:
             type: string
       x-yc-apigateway-integration:
         type: serverless_containers
-        container_id: "${yandex_serverless_container.app-container.id}"
+        container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
 EOT
 }
