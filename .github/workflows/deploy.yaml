@@ -59,6 +59,23 @@ jobs:
         env:
           TERRAFORMRC: ${{ vars.TERRAFORMRC }}
 
+      - name: 'Terragrunt Init'
+        uses: gruntwork-io/terragrunt-action@v1
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: ${{ env.tg_working_dir }}
+          tg_command: 'run-all init -upgrade'
+        env:
+          TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
+          TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
+          TF_VAR_folder_id: ${{ secrets.FOLDER_ID }}
+          TF_VAR_certificate_id: ${{ secrets.CERTIFICATE_ID }}
+          TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
+          TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TF_CLI_CONFIG_FILE: ./terraformrc.tfrc
+
       - name: 'Terragrunt Plan'
         uses: gruntwork-io/terragrunt-action@v1
         with:
