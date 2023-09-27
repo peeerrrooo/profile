@@ -1,6 +1,10 @@
 name: 'Apply Terragrunt'
 on:
   workflow_dispatch:
+    inputs:
+      app_version:
+        type: number
+        description: App version
 
 env:
   tf_version: '1.5.5'
