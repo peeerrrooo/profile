@@ -133,6 +133,8 @@ jobs:
 
       - name: "Git version"
         run: |
+          git config --global user.email peeerrrooo@gmail.com
+          git config --global user.name "CI/CD"
           echo $APP_VERSION > version
           git add .
           git commit -m "${APP_VERSION}"
