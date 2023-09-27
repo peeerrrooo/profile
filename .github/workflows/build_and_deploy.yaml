@@ -42,25 +42,25 @@ jobs:
       - name: 'Build Next.js'
         run: yarn build
 
-      - name: 'Set up Docker Buildx'
-        uses: docker/setup-buildx-action@v2
-
-      - name: 'Login to Yandex Docker Registry'
-        uses: docker/login-action@v2
-        with:
-          registry: ${{ secrets.registry_id }}
-          username: json_key
-          password: ${{ secrets.authorized_key }}
-
-      - name: 'Build and Push Docker Image'
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: true
-          provenance: false
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          tags: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
+#      - name: 'Set up Docker Buildx'
+#        uses: docker/setup-buildx-action@v2
+#
+#      - name: 'Login to Yandex Docker Registry'
+#        uses: docker/login-action@v2
+#        with:
+#          registry: ${{ secrets.registry_id }}
+#          username: json_key
+#          password: ${{ secrets.authorized_key }}
+#
+#      - name: 'Build and Push Docker Image'
+#        uses: docker/build-push-action@v4
+#        with:
+#          context: .
+#          push: true
+#          provenance: false
+#          cache-from: type=gha
+#          cache-to: type=gha,mode=max
+#          tags: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
 
       - name: 'Deploy to S3'
         if: ${{ steps.cache-build-deps.outputs.cache-hit != 'true' }}
@@ -69,76 +69,76 @@ jobs:
           UPLOAD_BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-  terragrunt:
-    name: 'Terragrunt deploy'
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Checkout Git'
-        uses: actions/checkout@v3
-
-      - name: 'Generate authorized_key.json'
-        run: echo $AUTHORIZED_KEY > ${{ env.tg_working_dir }}/authorized_key.json
-        env:
-          AUTHORIZED_KEY: ${{ secrets.AUTHORIZED_KEY }}
-
-      - name: 'Generate .terraformrc'
-        run: |
-          echo $TERRAFORMRC > terraformrc.tfrc
-          cat terraformrc.tfrc
-        env:
-          TERRAFORMRC: ${{ vars.TERRAFORMRC }}
-
-      - name: 'Terragrunt Init'
-        uses: gruntwork-io/terragrunt-action@v1
-        with:
-          tf_version: ${{ env.tf_version }}
-          tg_version: ${{ env.tg_version }}
-          tg_dir: ${{ env.tg_working_dir }}
-          tg_command: 'run-all init -upgrade'
-        env:
-          TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
-          TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
-          TF_VAR_folder_id: ${{ secrets.FOLDER_ID }}
-          TF_VAR_certificate_id: ${{ secrets.CERTIFICATE_ID }}
-          TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
-          TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TF_VAR_bucket_name: ${{ secrets.BUCKET_NAME }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TF_CLI_CONFIG_FILE: terraformrc.tfrc
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          TERRAFORM_STATE_BUCKET: ${{ secrets.TERRAFORM_STATE_BUCKET }}
-
-      - name: 'Terragrunt Apply'
-        uses: gruntwork-io/terragrunt-action@v1
-        with:
-          tf_version: ${{ env.tf_version }}
-          tg_version: ${{ env.tg_version }}
-          tg_dir: ${{ env.tg_working_dir }}
-          tg_command: 'run-all apply'
-        env:
-          TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
-          TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
-          TF_VAR_folder_id: ${{ secrets.FOLDER_ID }}
-          TF_VAR_certificate_id: ${{ secrets.CERTIFICATE_ID }}
-          TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
-          TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TF_VAR_bucket_name: ${{ secrets.BUCKET_NAME }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TF_CLI_CONFIG_FILE: terraformrc.tfrc
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          TERRAFORM_STATE_BUCKET: ${{ secrets.TERRAFORM_STATE_BUCKET }}
-
-      - name: "Git version"
-        run: |
-          git config --global user.email peeerrrooo@gmail.com
-          git config --global user.name "CI/CD"
-          echo $APP_VERSION > version
-          git add .
-          git commit -m "${APP_VERSION}"
-          git push
-        env:
-          APP_VERSION: v${{ github.event.inputs.app_version }}
+#
+#  terragrunt:
+#    name: 'Terragrunt deploy'
+#    needs: [build]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: 'Checkout Git'
+#        uses: actions/checkout@v3
+#
+#      - name: 'Generate authorized_key.json'
+#        run: echo $AUTHORIZED_KEY > ${{ env.tg_working_dir }}/authorized_key.json
+#        env:
+#          AUTHORIZED_KEY: ${{ secrets.AUTHORIZED_KEY }}
+#
+#      - name: 'Generate .terraformrc'
+#        run: |
+#          echo $TERRAFORMRC > terraformrc.tfrc
+#          cat terraformrc.tfrc
+#        env:
+#          TERRAFORMRC: ${{ vars.TERRAFORMRC }}
+#
+#      - name: 'Terragrunt Init'
+#        uses: gruntwork-io/terragrunt-action@v1
+#        with:
+#          tf_version: ${{ env.tf_version }}
+#          tg_version: ${{ env.tg_version }}
+#          tg_dir: ${{ env.tg_working_dir }}
+#          tg_command: 'run-all init -upgrade'
+#        env:
+#          TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
+#          TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
+#          TF_VAR_folder_id: ${{ secrets.FOLDER_ID }}
+#          TF_VAR_certificate_id: ${{ secrets.CERTIFICATE_ID }}
+#          TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
+#          TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+#          TF_VAR_bucket_name: ${{ secrets.BUCKET_NAME }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          TF_CLI_CONFIG_FILE: terraformrc.tfrc
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          TERRAFORM_STATE_BUCKET: ${{ secrets.TERRAFORM_STATE_BUCKET }}
+#
+#      - name: 'Terragrunt Apply'
+#        uses: gruntwork-io/terragrunt-action@v1
+#        with:
+#          tf_version: ${{ env.tf_version }}
+#          tg_version: ${{ env.tg_version }}
+#          tg_dir: ${{ env.tg_working_dir }}
+#          tg_command: 'run-all apply'
+#        env:
+#          TF_VAR_image_name: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
+#          TF_VAR_cloud_id: ${{ secrets.CLOUD_ID }}
+#          TF_VAR_folder_id: ${{ secrets.FOLDER_ID }}
+#          TF_VAR_certificate_id: ${{ secrets.CERTIFICATE_ID }}
+#          TF_VAR_telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
+#          TF_VAR_telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+#          TF_VAR_bucket_name: ${{ secrets.BUCKET_NAME }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          TF_CLI_CONFIG_FILE: terraformrc.tfrc
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          TERRAFORM_STATE_BUCKET: ${{ secrets.TERRAFORM_STATE_BUCKET }}
+#
+#      - name: "Git version"
+#        run: |
+#          git config --global user.email peeerrrooo@gmail.com
+#          git config --global user.name "CI/CD"
+#          echo $APP_VERSION > version
+#          git add .
+#          git commit -m "${APP_VERSION}"
+#          git push
+#        env:
+#          APP_VERSION: v${{ github.event.inputs.app_version }}
