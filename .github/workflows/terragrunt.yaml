@@ -51,6 +51,7 @@ jobs:
           TF_CLI_CONFIG_FILE: terraformrc.tfrc
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          TERRAFORM_STATE_BUCKET: ${{ secrets.TERRAFORM_STATE_BUCKET }}
 
       - name: 'Terragrunt Apply'
         uses: gruntwork-io/terragrunt-action@v1
@@ -71,3 +72,4 @@ jobs:
           TF_CLI_CONFIG_FILE: terraformrc.tfrc
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          TERRAFORM_STATE_BUCKET: ${{ secrets.TERRAFORM_STATE_BUCKET }}
