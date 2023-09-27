@@ -120,5 +120,18 @@ paths:
         bucket: ${var.bucket_name}
         object: "_next/static/{dir}/{file}"
         service_account_id: "${var.service_account_id}"
+ /_next/static/{dir}/_buildManifest.js:
+    get:
+      parameters:
+        - name: dir
+          in: path
+          required: true
+          schema:
+            type: string
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "_next/static/{dir}/__nextManifest.js"
+        service_account_id: "${var.service_account_id}"
 EOT
 }
