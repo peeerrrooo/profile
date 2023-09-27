@@ -40,7 +40,9 @@ jobs:
         run: yarn install
 
       - name: 'Build Next.js'
-        run: yarn build
+        run: |
+          yarn build
+          ls build/static/*/*
         env:
           NODE_ENV: "production"
 
