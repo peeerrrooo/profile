@@ -40,7 +40,6 @@ jobs:
         run: yarn install
 
       - name: 'Build Next.js'
-        if: ${{ steps.cache-build-deps.outputs.cache-hit != 'true' }}
         run: yarn build
 
       - name: 'Set up Docker Buildx'
