@@ -14,7 +14,7 @@ export async function uploadFileToBucket({
   const content = fs.readFileSync(path.resolve('./', filePath))
   const putCommand = new PutObjectCommand({
     Bucket: bucketName,
-    Key: filePath.replaceAll('build', '_next'),
+    Key: filePath.replaceAll('build/', '_next/'),
     Body: content
   })
   await s3Client.send(putCommand)
