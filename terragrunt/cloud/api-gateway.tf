@@ -81,12 +81,13 @@ paths:
       parameters:
         - name: file
           in: path
-          required: false
+          required: true
           schema:
             type: string
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: examples
+        object: "_next/static/chunks/{file}"
         service_account_id: "${var.service_account_id}"
  /_next/static/chunks/pages/{file}:
     get:
