@@ -1,5 +1,5 @@
 import { S3Client } from '@aws-sdk/client-s3'
-import { uploadFileToBucket } from './s3'
+import { deleteStatic, uploadFileToBucket } from './s3'
 import { getAllFiles } from './files'
 
 const s3Client = new S3Client({
@@ -9,6 +9,8 @@ const s3Client = new S3Client({
 const bucketName = process.env.UPLOAD_BUCKET_NAME || ''
 
 const bootstrap = async () => {
+  await deleteStatic(s3Client, bucketName)
+
   const files = getAllFiles('./build/static')
   const req$: Array<Promise<void>> = []
   for (const file of files) {

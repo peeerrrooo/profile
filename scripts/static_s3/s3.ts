@@ -1,6 +1,22 @@
-import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
+import {
+  PutObjectCommand,
+  S3Client,
+  DeleteObjectCommand
+} from '@aws-sdk/client-s3'
 import fs from 'fs'
 import path from 'path'
+
+export async function deleteStatic(s3Client: S3Client, bucketName) {
+  try {
+    const deleteCommand = new DeleteObjectCommand({
+      Bucket: bucketName,
+      Key: '_next'
+    })
+    await s3Client.send(deleteCommand)
+  } catch {
+    return
+  }
+}
 
 export async function uploadFileToBucket({
   filePath,
