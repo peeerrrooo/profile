@@ -5,8 +5,8 @@ generate "backend" {
 terraform {
   backend "s3" {
     endpoint   = "storage.yandexcloud.net"
-    access_key = "${get_env(\"AWS_ACCESS_KEY_ID\")}"
-    secret_key = "${get_env(\"AWS_SECRET_ACCESS_KEY\")}"
+    access_key = ${get_env("AWS_ACCESS_KEY_ID")
+    secret_key = ${get_env("AWS_SECRET_ACCESS_KEY")
     bucket     = "profile-state"
     key        = "${path_relative_to_include()}/terraform.tfstate"
     region     = "ru-central1"
