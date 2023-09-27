@@ -33,3 +33,7 @@ variable "domain_name" {
 variable "certificate_id" {
   type = string
 }
+
+variable "bucket_name" {
+  type = string
+}

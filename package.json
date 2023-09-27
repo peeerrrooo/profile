@@ -11,7 +11,8 @@
     "git:prepare": "husky install",
     "lint": "eslint ./src --ext ts,tsx,js,jsx",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy:s3": "ts-node -O '{\"module\": \"commonjs\"}' ./scripts/static_s3"
   },
   "keywords": [],
   "author": "D.Brakk",
@@ -58,6 +59,7 @@
     "webpack": "^5.64.2"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.418.0",
     "@babel/core": "^7.16.0",
     "@babel/plugin-proposal-class-properties": "^7.16.0",
     "@babel/plugin-proposal-decorators": "^7.16.4",
@@ -72,6 +74,7 @@
     "@storybook/react": "^6.4.0",
     "@types/axios": "^0.14.0",
     "@types/lodash": "^4.14.177",
+    "@types/node": "^20.6.5",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.15",
@@ -94,6 +97,7 @@
     "prettier": "^2.3.0",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
     "tslib": "^2.3.1",
     "typescript": "^4.5.2"
   },

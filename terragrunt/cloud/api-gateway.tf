@@ -86,7 +86,7 @@ paths:
             type: string
       x-yc-apigateway-integration:
         type: object_storage
-        bucket: examples
+        bucket: ${var.bucket_name}
         object: "_next/static/chunks/{file}"
         service_account_id: "${var.service_account_id}"
  /_next/static/chunks/pages/{file}:
@@ -94,29 +94,31 @@ paths:
       parameters:
         - name: file
           in: path
-          required: false
+          required: true
           schema:
             type: string
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "_next/static/chunks/pages/{file}"
         service_account_id: "${var.service_account_id}"
  /_next/static/{dir}/{file}:
     get:
       parameters:
         - name: dir
           in: path
-          required: false
+          required: true
           schema:
             type: string
         - name: file
           in: path
-          required: false
+          required: true
           schema:
             type: string
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "_next/static/{dir}/{file}"
         service_account_id: "${var.service_account_id}"
 EOT
 }
