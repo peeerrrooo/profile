@@ -66,6 +66,17 @@ jobs:
           cache-to: type=gha,mode=max
           tags: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
 
+      - name: "Git version"
+        run: |
+          git config --global user.email peeerrrooo@gmail.com
+          git config --global user.name "CI/CD"
+          echo $APP_VERSION > version
+          git add .
+          git commit -m "${APP_VERSION}"
+          git push
+        env:
+          APP_VERSION: v${{ github.event.inputs.app_version }}
+
       - name: 'Deploy to S3'
         run: |
           yarn deploy:s3:nextjs
@@ -136,14 +147,3 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           TERRAFORM_STATE_BUCKET: ${{ secrets.TERRAFORM_STATE_BUCKET }}
-
-      - name: "Git version"
-        run: |
-          git config --global user.email peeerrrooo@gmail.com
-          git config --global user.name "CI/CD"
-          echo $APP_VERSION > version
-          git add .
-          git commit -m "${APP_VERSION}"
-          git push
-        env:
-          APP_VERSION: v${{ github.event.inputs.app_version }}
