@@ -1,22 +1,25 @@
 import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 import fs from 'fs'
-import path from 'path'
 
 export async function uploadFileToBucket({
   filePath,
+  key,
   bucketName,
-  s3Client
+  s3Client,
+  contentType
 }: {
   filePath: string
+  key: string
   bucketName: string
   s3Client: S3Client
+  contentType: string
 }) {
-  const content = fs.readFileSync(path.resolve('./', filePath))
+  const content = fs.readFileSync(filePath)
   const putCommand = new PutObjectCommand({
     Bucket: bucketName,
-    Key: filePath.replaceAll('build/', '_next/'),
+    Key: key,
     Body: content,
-    ContentType: 'text/javascript'
+    ContentType: contentType
   })
   await s3Client.send(putCommand)
 }

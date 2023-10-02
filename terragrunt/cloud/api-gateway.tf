@@ -31,8 +31,9 @@ paths:
  /d.brakk-profile-cv.pdf:
     get:
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/d.brakk-profile-cv.pdf"
         service_account_id: "${var.service_account_id}"
  /api/feedback:
     post:
@@ -40,41 +41,92 @@ paths:
         type: serverless_containers
         container_id: "${yandex_serverless_container.profile-site.id}"
         service_account_id: "${var.service_account_id}"
- /android{*}:
+ /android-{file}:
     get:
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/android-{file}"
         service_account_id: "${var.service_account_id}"
- /apple{*}:
+ /apple-{file}:
     get:
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/apple-{file}"
         service_account_id: "${var.service_account_id}"
- /favicon{*}:
+ /favicon.icon:
     get:
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/favicon.icon"
         service_account_id: "${var.service_account_id}"
- /ms-icon{*}:
+ /favicon-{file}:
     get:
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/favicon-{file}"
+        service_account_id: "${var.service_account_id}"
+ /ms-icon-{file}:
+    get:
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/ms-icon-{file}"
         service_account_id: "${var.service_account_id}"
  /robots.txt:
     get:
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/robots.txt"
         service_account_id: "${var.service_account_id}"
  /manifest.json:
     get:
       x-yc-apigateway-integration:
-        type: serverless_containers
-        container_id: "${yandex_serverless_container.profile-site.id}"
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/manifest.json"
+        service_account_id: "${var.service_account_id}"
+ /browserconfig.xml:
+    get:
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/browserconfig.xml"
+        service_account_id: "${var.service_account_id}"
+ /avatar.jpg:
+    get:
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/avatar.jpg"
         service_account_id: "${var.service_account_id}"
  /_next/static/chunks/{file}:
     get:

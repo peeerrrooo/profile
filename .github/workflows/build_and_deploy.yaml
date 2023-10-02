@@ -67,7 +67,9 @@ jobs:
           tags: ${{ secrets.registry_id }}/${{ env.image_name }}:v${{ github.event.inputs.app_version }}
 
       - name: 'Deploy to S3'
-        run: yarn deploy:s3
+        run: |
+          yarn deploy:s3:nextjs
+          yarn deploy:s3:publuc
         env:
           UPLOAD_BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
