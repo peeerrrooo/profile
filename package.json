@@ -12,8 +12,8 @@
     "lint": "eslint ./src --ext ts,tsx,js,jsx",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy:s3:nextjs": "ts-node -O '{\"module\": \"commonjs\"}' ./scripts/nextjs",
-    "deploy:s3:publuc": "ts-node -O '{\"module\": \"commonjs\"}' ./scripts/public"
+    "deploy:s3:nextjs": "ts-node -O '{\"module\": \"commonjs\"}' ./scripts/static_s3/nextjs",
+    "deploy:s3:publuc": "ts-node -O '{\"module\": \"commonjs\"}' ./scripts/static_s3/public"
   },
   "keywords": [],
   "author": "D.Brakk",
