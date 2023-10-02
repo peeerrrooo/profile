@@ -18,7 +18,7 @@ const bootstrap = async () => {
     req$.push(
       uploadFileToBucket({
         filePath: filePath,
-        key: `public/${file}`,
+        key: file,
         s3Client,
         bucketName,
         contentType: mime.getType(filePath)
