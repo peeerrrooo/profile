@@ -67,12 +67,12 @@ paths:
         bucket: ${var.bucket_name}
         object: "public/apple-{file}"
         service_account_id: "${var.service_account_id}"
- /favicon.icon:
+ /favicon.ico:
     get:
       x-yc-apigateway-integration:
         type: object_storage
         bucket: ${var.bucket_name}
-        object: "public/favicon.icon"
+        object: "public/favicon.ico"
         service_account_id: "${var.service_account_id}"
  /favicon-{file}:
     get:
@@ -121,12 +121,12 @@ paths:
         bucket: ${var.bucket_name}
         object: "public/browserconfig.xml"
         service_account_id: "${var.service_account_id}"
- /avatar.jpg:
+ /avatar.jpeg:
     get:
       x-yc-apigateway-integration:
         type: object_storage
         bucket: ${var.bucket_name}
-        object: "public/avatar.jpg"
+        object: "public/avatar.jpeg"
         service_account_id: "${var.service_account_id}"
  /_next/static/chunks/{file}:
     get:
