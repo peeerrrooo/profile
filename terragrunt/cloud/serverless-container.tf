@@ -1,12 +1,12 @@
 resource "yandex_serverless_container" "profile-site" {
   name = "profile-site"
   description = "Profile site container"
-  memory = 4096
+  memory = 1024
   cores = 1
   core_fraction = 100
   service_account_id = var.service_account_id
   execution_timeout = "1s"
-  concurrency = 10
+  concurrency = 2
 
   image {
     url = var.image_name
