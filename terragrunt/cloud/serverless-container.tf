@@ -6,7 +6,7 @@ resource "yandex_serverless_container" "profile-site" {
   core_fraction = 100
   service_account_id = var.service_account_id
   execution_timeout = "1s"
-  concurrency = 2
+  concurrency = 1
 
   image {
     url = var.image_name
