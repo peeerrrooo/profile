@@ -66,6 +66,13 @@ const CommonMeta = ({
       <meta name="smartbanner:title" content={siteName} />
       <meta name="smartbanner:author" content={siteName} />
 
+      {/*Twitter Cards*/}
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content={siteName} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={avatarUrl} />
+
       {/*Robots*/}
       <meta httpEquiv="X-UA-Compatible" content="IE=edge, chrome=1" />
       <meta httpEquiv="cleartype" content="on" />
