@@ -74,6 +74,13 @@ paths:
         bucket: ${var.bucket_name}
         object: "public/favicon.ico"
         service_account_id: "${var.service_account_id}"
+ /favicon.svg:
+    get:
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/favicon.svg"
+        service_account_id: "${var.service_account_id}"
  /favicon-{file}:
     get:
       parameters:
@@ -86,6 +93,19 @@ paths:
         type: object_storage
         bucket: ${var.bucket_name}
         object: "public/favicon-{file}"
+        service_account_id: "${var.service_account_id}"
+ /web-{file}:
+    get:
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/web-{file}"
         service_account_id: "${var.service_account_id}"
  /ms-icon-{file}:
     get:
@@ -113,6 +133,13 @@ paths:
         type: object_storage
         bucket: ${var.bucket_name}
         object: "public/manifest.json"
+        service_account_id: "${var.service_account_id}"
+ /site.webmanifest:
+    get:
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: ${var.bucket_name}
+        object: "public/site.webmanifest"
         service_account_id: "${var.service_account_id}"
  /browserconfig.xml:
     get:
