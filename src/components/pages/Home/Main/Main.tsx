@@ -58,12 +58,6 @@ const Main = inject('MenuModel')(
               >
                 <Icon rounded icon="SiTelegram" marginLeft={16} />
               </a>
-              <a
-                href={`skype:${info().information.skype}?userinfo`}
-                target="_blank"
-              >
-                <Icon rounded icon="FaSkype" marginLeft={16} />
-              </a>
             </Block>
           </Block>
         </Block>
