@@ -69,6 +69,8 @@ const CommonMeta = ({
       {/*Twitter Cards*/}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={siteName} />
+      <meta property="twitter:domain" content={siteName} />
+      <meta property="twitter:url" content={siteName} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={avatarUrl} />

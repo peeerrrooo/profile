@@ -121,12 +121,12 @@ paths:
         bucket: ${var.bucket_name}
         object: "public/browserconfig.xml"
         service_account_id: "${var.service_account_id}"
- /avatar.jpeg:
+ /about-me.jpg:
     get:
       x-yc-apigateway-integration:
         type: object_storage
         bucket: ${var.bucket_name}
-        object: "public/avatar.jpeg"
+        object: "public/about-me.jpg"
         service_account_id: "${var.service_account_id}"
  /_next/static/chunks/{file}:
     get:
