@@ -48,47 +48,15 @@ const HeadMeta = inject('GlobalModel')(
 
           <CommonMeta
             prefix={prefix}
-            siteName={GlobalModel!.config!.siteName}
-            siteUrl={GlobalModel!.config.siteUrl}
+            siteName={GlobalModel?.config?.siteName ?? ''}
+            siteUrl={resolveUrl ?? ''}
+            avatarUrl={
+              metaImage ?? `${prefix}/${GlobalModel!.config.avatarLink}`
+            }
+            siteType={metaType ?? GlobalModel?.config?.siteType ?? 'article'}
+            title={resolveMetaTitle ?? ''}
+            description={resolveMetaDescription ?? ''}
           />
-
-          <link
-            rel="icon"
-            type="image/png"
-            href="/favicon-96x96.png"
-            sizes="96x96"
-          />
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-          <link rel="shortcut icon" href="/favicon.ico" />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-          />
-          <meta name="apple-mobile-web-app-title" content="dbrakk.tech" />
-          <link rel="manifest" href="/site.webmanifest" />
-
-          <meta property="title" content={resolveMetaTitle} />
-          <meta property="og:title" content={resolveMetaTitle} />
-          <meta
-            property="og:type"
-            content={metaType ?? GlobalModel?.config?.siteType}
-          />
-          <meta property="description" content={resolveMetaDescription} />
-          <meta property="og:description" content={resolveMetaDescription} />
-          <meta
-            property="og:image"
-            content={metaImage ?? `${prefix}/${GlobalModel!.config.avatarLink}`}
-          />
-          <meta
-            property="og:image:secure_url"
-            content={metaImage ?? `${prefix}/${GlobalModel!.config.avatarLink}`}
-          />
-          <meta property="og:image:width" content="806" />
-          <meta property="og:image:height" content="535" />
-
-          <meta property="og:url" content={resolveUrl} />
-          <meta name="author" content={GlobalModel?.config?.siteName} />
         </Head>
       )
     }
