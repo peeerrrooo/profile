@@ -1,5 +1,5 @@
 import { getAge } from './moment'
-import aboutImage from 'resources/img/about-me.jpeg'
+import aboutImage from 'resources/img/about-me.jpg'
 import ujet from 'resources/img/ujet.svg'
 import ismart from 'resources/img/ismart.svg'
 import finservice from 'resources/img/finservice.svg'

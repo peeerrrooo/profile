@@ -6,7 +6,6 @@ import { Image } from 'ui/Image'
 import { Button } from 'ui/Button'
 import { info } from 'utils/info'
 import { Title, Text, Paragraph } from 'ui/Typography'
-import { phoneNumberNormalizer } from 'utils/formatters/phone'
 
 export interface IMainProps {
   prefix: string
@@ -61,18 +60,6 @@ const Main = ({ prefix }: IMainProps) => {
                   <b>Age</b>
                 </Paragraph>{' '}
                 {info().information.age} Years
-              </li>
-            )}
-            {!info().information.phone ? null : (
-              <li>
-                <Paragraph selection={false}>
-                  <b>Phone</b>
-                </Paragraph>{' '}
-                <span>
-                  <a href={`tel:+7${info().information.phone}`}>
-                    +7 {phoneNumberNormalizer(info().information.phone)}
-                  </a>
-                </span>
               </li>
             )}
             {!info().information.nationality ? null : (
